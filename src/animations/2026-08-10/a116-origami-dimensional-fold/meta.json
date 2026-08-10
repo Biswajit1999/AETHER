@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-20-origami-dimensional-fold",
+  "slug": "origami-dimensional-fold",
+  "seed": "aether:2026-08-10:a116-origami-dimensional-fold",
+  "title": "Origami Dimensional Fold",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "accordion-panelled-flat-plane",
+    "dynamics": "per-panel-rigid-hinge-rotation",
+    "sampling": "uniform-grid-per-panel",
+    "shader": "alternating-panel-tint",
+    "audio": "bass-fold-depth-mid-fold-speed-high-point-size",
+    "camera": "lateral-parallax-sway",
+    "temporalArc": "continuous-fold-unfold-cycle",
+    "interaction": "none"
+  },
+  "mobileStrategy": "rows 70->40 and colsPerPanel 26->16 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "origami",
+    "folding",
+    "dimensional"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-32-gravitational-wave-chirp",
+  "slug": "gravitational-wave-chirp",
+  "seed": "aether:2026-08-10:a128-gravitational-wave-chirp",
+  "title": "Gravitational Wave Chirp",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "concentric-ring-shell",
+    "dynamics": "post-newtonian-quadrupole-chirp-frequency-law",
+    "sampling": "uniform-angular-ring-sampling",
+    "shader": "ring-phase-hue-gradient",
+    "audio": "bass-merger-time-mid-chirp-rate-high-point-size",
+    "camera": "static-frame-fixed-distance",
+    "temporalArc": "repeating-inspiral-chirp-cycle",
+    "interaction": "none"
+  },
+  "mobileStrategy": "ringCount 42->22 and pointsPerRing 320->160 on coarse-pointer devices",
+  "duration": 10,
+  "tags": [
+    "gravitational-waves",
+    "chirp",
+    "inspiral"
+  ]
+}

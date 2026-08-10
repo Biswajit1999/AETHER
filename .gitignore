@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vite/
+staging/*
+!staging/.gitkeep
+review/
+tmp/
+.env
+.env.*
+*.log
+public/reels/*.mp4
+.DS_Store

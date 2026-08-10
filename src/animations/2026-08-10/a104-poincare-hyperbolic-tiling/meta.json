@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-08-poincare-hyperbolic-tiling",
+  "slug": "poincare-hyperbolic-tiling",
+  "seed": "aether:2026-08-10:a104-poincare-hyperbolic-tiling",
+  "title": "Poincaré Disk Hyperbolic Tree",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "poincare-disk-hyperbolic-cayley-tree",
+    "dynamics": "mobius-translation-branch-recursion",
+    "sampling": "recursive-generator-composition-edge-lerp",
+    "shader": "depth-gradient-travelling-pulse",
+    "audio": "bass-disk-breathing-mid-rotation-high-point-size",
+    "camera": "fixed-frame-slow-dolly-oscillation",
+    "temporalArc": "static-tree-continuous-pulse",
+    "interaction": "none"
+  },
+  "mobileStrategy": "recursion depth 10->8 and pointsPerEdge 14->8 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "hyperbolic-geometry",
+    "poincare-disk",
+    "mobius-transform"
+  ]
+}

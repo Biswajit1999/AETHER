@@ -1,0 +1,32 @@
+{
+  "id": "2026-08-10-human-033-stellar-collision-bridge",
+  "slug": "stellar-collision-bridge",
+  "seed": "aether:2026-08-10:a033-stellar-collision-bridge",
+  "title": "Stellar Encounter Bridge Study",
+  "description": "A looping visual construction of two approaching particle volumes and a transient bridge. It does not solve stellar hydrodynamics, shocks, fusion or mass transfer.",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "colliding-stellar-volumes",
+    "dynamics": "periodic-approach-and-bridge-deformation",
+    "sampling": "seeded-stratified-astrophysical-particles",
+    "shader": "additive-bichromatic-radiance-field",
+    "audio": "bass-compression-mid-orbit-high-radiance",
+    "camera": "slow-observatory-orbit",
+    "temporalArc": "continuous-event-cycle",
+    "interaction": "interactive-gallery"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "astrophysics",
+    "colliding-stellar-volumes",
+    "audio-reactive"
+  ]
+}

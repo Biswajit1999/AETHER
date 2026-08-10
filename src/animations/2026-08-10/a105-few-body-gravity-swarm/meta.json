@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-09-few-body-gravity-swarm",
+  "slug": "few-body-gravity-swarm",
+  "seed": "aether:2026-08-10:a105-few-body-gravity-swarm",
+  "title": "Few-Body Gravity Swarm",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "PHYSICALLY_MODELLED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "five-body-orbital-trail-swarm",
+    "dynamics": "softened-newtonian-mutual-gravity-integration",
+    "sampling": "per-body-ring-buffer-trail",
+    "shader": "cosine-body-palette-trail-fade",
+    "audio": "bass-timestep-boost-mid-camera-orbit-rate-high-point-size",
+    "camera": "continuous-full-orbit",
+    "temporalArc": "continuous-n-body-evolution",
+    "interaction": "none"
+  },
+  "mobileStrategy": "trailLength 320->140 on coarse-pointer devices",
+  "duration": 25,
+  "tags": [
+    "n-body",
+    "gravity",
+    "orbital-mechanics"
+  ]
+}

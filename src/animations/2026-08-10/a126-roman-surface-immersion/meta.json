@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-30-roman-surface-immersion",
+  "slug": "roman-surface-immersion",
+  "seed": "aether:2026-08-10:a126-roman-surface-immersion",
+  "title": "Roman Surface Immersion",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "steiner-roman-surface-rp2-immersion",
+    "dynamics": "static-surface-audio-scaled-pulse",
+    "sampling": "uniform-uv-analytic-parametrisation",
+    "shader": "v-parameter-hue-gradient",
+    "audio": "bass-surface-scale-mid-rotation-high-point-size",
+    "camera": "static-frame-fixed-distance",
+    "temporalArc": "continuous-gentle-tumble",
+    "interaction": "none"
+  },
+  "mobileStrategy": "uSteps/vSteps 150->90 per axis on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "topology",
+    "roman-surface",
+    "projective-plane"
+  ]
+}

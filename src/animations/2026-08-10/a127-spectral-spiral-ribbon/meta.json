@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-31-spectral-spiral-ribbon",
+  "slug": "spectral-spiral-ribbon",
+  "seed": "aether:2026-08-10:a127-spectral-spiral-ribbon",
+  "title": "Spectral Spiral Ribbon",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "logarithmic-spiral-triple-strand-ribbon",
+    "dynamics": "per-band-independent-strand-pulse",
+    "sampling": "parametric-spiral-arc-length-sampling",
+    "shader": "band-colour-coded-flat-tint",
+    "audio": "bass-mid-high-independent-per-strand-displacement",
+    "camera": "static-frame-object-y-rotation",
+    "temporalArc": "continuous-spectral-pulse",
+    "interaction": "none"
+  },
+  "mobileStrategy": "pointsPerBand 7000->3000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "spiral",
+    "spectral",
+    "logarithmic"
+  ]
+}

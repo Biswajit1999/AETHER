@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-33-lsystem-branching-timeline",
+  "slug": "lsystem-branching-timeline",
+  "seed": "aether:2026-08-10:a129-lsystem-branching-timeline",
+  "title": "L-System Branching Timeline",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "l-system-fractal-branching-tree",
+    "dynamics": "deterministic-string-rewrite-turtle-interpretation",
+    "sampling": "per-segment-interpolated-turtle-path",
+    "shader": "depth-hue-flicker-glow",
+    "audio": "bass-branch-sway-mid-depth-size-spread-high-flicker-rate",
+    "camera": "lateral-parallax-sway",
+    "temporalArc": "static-tree-continuous-flicker",
+    "interaction": "none"
+  },
+  "mobileStrategy": "iterations 4->3 and pointsPerSegment 14->8 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "l-system",
+    "fractal",
+    "branching-timelines"
+  ]
+}

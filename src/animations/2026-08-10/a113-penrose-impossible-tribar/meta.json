@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-17-penrose-impossible-tribar",
+  "slug": "penrose-impossible-tribar",
+  "seed": "aether:2026-08-10:a113-penrose-impossible-tribar",
+  "title": "Penrose Impossible Tribar",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "three-beam-triangular-loop",
+    "dynamics": "static-fixed-viewpoint-illusion",
+    "sampling": "per-beam-jittered-linear-interpolation",
+    "shader": "tricolour-beam-flat-tint",
+    "audio": "bass-beam-surface-jitter-mid-jitter-frequency-high-point-size",
+    "camera": "locked-fixed-viewpoint-no-orbit",
+    "temporalArc": "static-form-subtle-shimmer",
+    "interaction": "none"
+  },
+  "mobileStrategy": "pointsPerBeam 2000->900 on coarse-pointer devices",
+  "duration": 18,
+  "tags": [
+    "impossible-geometry",
+    "penrose-triangle",
+    "illusion"
+  ]
+}

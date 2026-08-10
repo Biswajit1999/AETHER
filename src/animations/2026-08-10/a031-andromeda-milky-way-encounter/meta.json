@@ -1,0 +1,25 @@
+{
+  "id": "aether-031-andromeda-milky-way-encounter",
+  "slug": "andromeda-milky-way-encounter",
+  "seed": "aether:2026-08-10:a031-andromeda-milky-way-encounter",
+  "title": "Andromeda–Milky Way Encounter",
+  "description": "A time-evolving restricted N-body model of a merger-compatible Local Group encounter. Two softened galactic potentials respond to mutual gravity and momentum-conserving orbital drag while massless stellar tracers form bridges, shells and tidal tails.",
+  "classification": "PHYSICS_MODEL",
+  "duration": 38,
+  "audioControls": ["high", "rms"],
+  "physics": {
+    "model": "restricted N-body encounter",
+    "integrator": "fixed-step symplectic Euler",
+    "gravity": "two mutually interacting softened point-mass halo potentials",
+    "dissipation": "momentum-conserving phenomenological dynamical friction",
+    "tracers": "massless exponential-disc stellar particles",
+    "units": { "length": "100 kpc", "mass": "1e12 solar masses", "time": "0.471 Gyr" },
+    "scenario": "accelerated merger-compatible realization beginning in the pre-encounter phase",
+    "caveat": "This is an educational restricted N-body model, not a precision forecast. Current observations allow both merger and non-merger outcomes. Gas, star formation, halo substructure, M33 and the LMC are not resolved here."
+  },
+  "references": [
+    { "title": "No certainty of a Milky Way–Andromeda collision", "doi": "10.1038/s41550-025-02563-1", "year": 2025 },
+    { "title": "The collision between the Milky Way and Andromeda", "doi": "10.1111/j.1365-2966.2008.13048.x", "year": 2008 }
+  ],
+  "tags": ["astrophysics", "restricted-n-body", "galaxy-dynamics", "tidal-tails"]
+}

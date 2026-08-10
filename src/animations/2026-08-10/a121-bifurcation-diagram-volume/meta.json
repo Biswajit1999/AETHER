@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-25-bifurcation-diagram-volume",
+  "slug": "bifurcation-diagram-volume",
+  "seed": "aether:2026-08-10:a121-bifurcation-diagram-volume",
+  "title": "Bifurcation Diagram Volume",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "logistic-map-bifurcation-diagram-volume",
+    "dynamics": "exact-period-doubling-parameter-sweep",
+    "sampling": "post-transient-iterate-retention-per-r",
+    "shader": "parameter-position-hue-gradient",
+    "audio": "bass-camera-push-mid-vertical-drift-rate-high-point-size",
+    "camera": "fixed-frame-slow-vertical-drift",
+    "temporalArc": "static-diagram-subtle-drift",
+    "interaction": "none"
+  },
+  "mobileStrategy": "rSamples 900->420 and keepIterations 70->40 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "chaos",
+    "bifurcation",
+    "logistic-map"
+  ]
+}

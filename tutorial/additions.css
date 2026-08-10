@@ -1,0 +1,10 @@
+a:focus-visible,
+button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.field-notes { padding: 80px 0; border-top: 1px solid var(--line); }
+.field-notes > h2 { margin: 8px 0 24px; font-size: 38px; }
+.field-notes > div { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.field-notes article { margin: 0; padding: 22px; border-radius: 12px; }
+.field-notes h3 { margin: 0 0 9px; color: #dff8ff; }
+.field-notes p { margin: 0; color: #aebed5; font-size: 12px; line-height: 1.7; }
+.project > pre { margin-top: 18px; padding: 22px; overflow: auto; border: 1px solid #1b3457; border-radius: 10px; background: #01050d; color: #a9eaff; font: 11px/1.7 "Cascadia Mono", monospace; }
+@media (max-width: 760px) { .field-notes > div { grid-template-columns: 1fr; } }

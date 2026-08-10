@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-34-droste-recursive-universe",
+  "slug": "droste-recursive-universe",
+  "seed": "aether:2026-08-10:a130-droste-recursive-universe",
+  "title": "Droste Recursive Universe",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "nested-exponential-ring-levels",
+    "dynamics": "continuous-exponential-self-similar-zoom",
+    "sampling": "per-level-geometric-radius-progression",
+    "shader": "level-cycle-hue-fade",
+    "audio": "bass-level-cycle-offset-mid-zoom-rate-high-point-size",
+    "camera": "static-frame-fixed-distance",
+    "temporalArc": "repeating-infinite-zoom-loop",
+    "interaction": "none"
+  },
+  "mobileStrategy": "pointsPerRing 420->200 on coarse-pointer devices",
+  "duration": 22,
+  "tags": [
+    "droste-effect",
+    "recursive",
+    "self-similar-zoom"
+  ]
+}

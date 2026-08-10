@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-07-ripple-tank-interference",
+  "slug": "ripple-tank-interference",
+  "seed": "aether:2026-08-10:a103-ripple-tank-interference",
+  "title": "Ripple Tank Interference",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "PHYSICALLY_MODELLED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "planar-ripple-tank-grid",
+    "dynamics": "three-source-circular-wave-superposition",
+    "sampling": "uniform-grid-seeded-source-placement",
+    "shader": "amplitude-crest-trough-gradient",
+    "audio": "bass-wave-speed-mid-wavenumber-high-point-size",
+    "camera": "elevated-parallax-sway",
+    "temporalArc": "continuous-interference-flow",
+    "interaction": "none"
+  },
+  "mobileStrategy": "gridSize 140->90 per axis on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "waves",
+    "interference",
+    "ripple-tank"
+  ]
+}

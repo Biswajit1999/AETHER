@@ -1,0 +1,32 @@
+{
+  "id": "2026-08-10-human-05-tesseract-edge-frame",
+  "slug": "tesseract-edge-frame",
+  "seed": "aether:2026-08-10:a031-tesseract-edge-frame",
+  "title": "Tesseract Edge Frame",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "4d-hypercube-edge-wireframe",
+    "dynamics": "dual-plane-4d-rotation-perspective-projection",
+    "sampling": "edge-interpolated-4d-vertex-pairs",
+    "shader": "depth-clip-threshold-discard",
+    "audio": "bass-4d-depth-clip-mid-xw-rotation-high-point-size",
+    "camera": "static-frame-fixed-distance",
+    "temporalArc": "continuous-4d-tumble",
+    "interaction": "none"
+  },
+  "mobileStrategy": "pointsPerEdge 240->90 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "4d",
+    "tesseract",
+    "hypercube",
+    "wireframe"
+  ]
+}

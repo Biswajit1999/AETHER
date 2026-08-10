@@ -1,0 +1,22 @@
+{
+  "name": "aether",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AETHER - Computational Visual Laboratory. An evolving collection of interactive particle, shader and audio-reactive studies created and curated by Biswajit Jana.",
+  "author": "Biswajit Jana",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test tests/catalogue.test.mjs tests/two-galaxy-model.test.mjs tests/equation-studies.test.mjs tests/study-sampling.test.mjs && node scripts/validate-study-contracts.mjs",
+    "manifest": "node scripts/build-manifest.mjs"
+  },
+  "dependencies": {
+    "three": "0.185.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "vite": "6.4.3"
+  }
+}

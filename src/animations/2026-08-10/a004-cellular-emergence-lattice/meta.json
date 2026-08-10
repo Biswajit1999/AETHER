@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-03-cellular-emergence-lattice",
+  "slug": "cellular-emergence-lattice",
+  "seed": "aether:2026-08-10:a004-cellular-emergence-lattice",
+  "title": "Cellular Emergence Lattice",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "cubic-voxel-lattice-swarm",
+    "dynamics": "wave-front-cellular-activation-rule",
+    "sampling": "uniform-grid-with-seeded-per-cell-hash",
+    "shader": "threshold-activation-discard-glow",
+    "audio": "bass-activation-threshold-mid-propagation-speed-high-jitter",
+    "camera": "breathing-dolly-tilt",
+    "temporalArc": "continuous-rule-propagation-waves",
+    "interaction": "none"
+  },
+  "mobileStrategy": "gridSize 34->22 per axis on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "cellular-automaton",
+    "lattice",
+    "emergence"
+  ]
+}

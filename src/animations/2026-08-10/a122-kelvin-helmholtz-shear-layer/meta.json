@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-26-kelvin-helmholtz-shear-layer",
+  "slug": "kelvin-helmholtz-shear-layer",
+  "seed": "aether:2026-08-10:a122-kelvin-helmholtz-shear-layer",
+  "title": "Kelvin-Helmholtz Shear Layer",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "twin-layer-fluid-interface-strip",
+    "dynamics": "growing-perturbation-vortex-roll-up",
+    "sampling": "uniform-strip-grid-dual-layer",
+    "shader": "layer-blend-flat-tint",
+    "audio": "bass-perturbation-amplitude-mid-growth-rate-high-point-size",
+    "camera": "fixed-elevated-view",
+    "temporalArc": "repeating-instability-growth-cycle",
+    "interaction": "none"
+  },
+  "mobileStrategy": "stripCount 90->46 and depthCount 18->10 on coarse-pointer devices",
+  "duration": 26,
+  "tags": [
+    "fluid-dynamics",
+    "shear-instability",
+    "kelvin-helmholtz"
+  ]
+}

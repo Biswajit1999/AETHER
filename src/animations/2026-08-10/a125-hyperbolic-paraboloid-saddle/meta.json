@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-29-hyperbolic-paraboloid-saddle",
+  "slug": "hyperbolic-paraboloid-saddle",
+  "seed": "aether:2026-08-10:a125-hyperbolic-paraboloid-saddle",
+  "title": "Hyperbolic Paraboloid Saddle",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "hyperbolic-paraboloid-saddle-grid",
+    "dynamics": "static-surface-audio-scaled-depth",
+    "sampling": "uniform-xy-grid-analytic-surface",
+    "shader": "gaussian-curvature-colour-mapping",
+    "audio": "bass-saddle-depth-mid-rotation-high-point-size",
+    "camera": "fixed-elevated-view",
+    "temporalArc": "continuous-gentle-rotation",
+    "interaction": "none"
+  },
+  "mobileStrategy": "grid resolution 100->60 per axis on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "differential-geometry",
+    "saddle-surface",
+    "curvature"
+  ]
+}

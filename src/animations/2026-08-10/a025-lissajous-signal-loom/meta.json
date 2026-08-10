@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-025-lissajous-signal-loom",
+  "slug": "lissajous-signal-loom",
+  "seed": "aether:2026-08-10:a025-lissajous-signal-loom",
+  "title": "Lissajous Signal Loom",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "lissajous-curve",
+    "dynamics": "frequency-ratio-weaving",
+    "sampling": "seeded-stratified-particle-sampling",
+    "shader": "additive-bichromatic-point-field",
+    "audio": "bass-displacement-mid-twist-high-luminance",
+    "camera": "slow-orbital-drift",
+    "temporalArc": "continuous-breathing-cycle",
+    "interaction": "gallery-navigation"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 18,
+  "tags": [
+    "lissajous-curve",
+    "particles",
+    "audio-reactive"
+  ]
+}

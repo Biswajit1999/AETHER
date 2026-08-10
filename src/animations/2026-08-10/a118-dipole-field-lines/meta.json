@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-22-dipole-field-lines",
+  "slug": "dipole-field-lines",
+  "seed": "aether:2026-08-10:a118-dipole-field-lines",
+  "title": "Dipole Field Lines",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "PHYSICALLY_MODELLED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "magnetic-dipole-field-line-bundle",
+    "dynamics": "exact-r-equals-r0-sin-squared-theta-parametrisation",
+    "sampling": "per-line-azimuth-and-radius-sweep",
+    "shader": "travelling-flow-pulse-line-tint",
+    "audio": "bass-rotation-mid-flow-speed-high-point-size",
+    "camera": "static-frame-object-y-rotation",
+    "temporalArc": "continuous-field-line-flow",
+    "interaction": "none"
+  },
+  "mobileStrategy": "lineCount 36->18 and pointsPerLine 160->90 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "dipole",
+    "field-lines",
+    "electromagnetism"
+  ]
+}

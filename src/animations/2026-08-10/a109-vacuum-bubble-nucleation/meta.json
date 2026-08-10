@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-13-vacuum-bubble-nucleation",
+  "slug": "vacuum-bubble-nucleation",
+  "seed": "aether:2026-08-10:a109-vacuum-bubble-nucleation",
+  "title": "Vacuum Bubble Nucleation",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "nucleating-expanding-bubble-shells",
+    "dynamics": "seeded-stochastic-birth-radial-expansion-fade",
+    "sampling": "per-bubble-spherical-shell-sampling",
+    "shader": "age-fade-hue-cycled-bubble-tint",
+    "audio": "bass-bubble-lifetime-mid-expansion-rate-high-point-size",
+    "camera": "gentle-lateral-sway",
+    "temporalArc": "repeating-nucleation-cycles",
+    "interaction": "none"
+  },
+  "mobileStrategy": "bubbleCount 22->10 and pointsPerBubble 520->260 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "vacuum-bubble",
+    "nucleation",
+    "speculative-cosmology"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-01-hopf-linked-fibres",
+  "slug": "hopf-linked-fibres",
+  "seed": "aether:2026-08-10:a002-hopf-linked-fibres",
+  "title": "Hopf-Linked Fibres",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "hopf-linked-fibre-shells",
+    "dynamics": "quaternion-coupled-phase-flow",
+    "sampling": "fibonacci-sphere-stratified-fibres",
+    "shader": "iridescent-fresnel-rim",
+    "audio": "bass-radial-pulse-mid-phase-coupling-high-shimmer",
+    "camera": "slow-quaternion-orbit-drift",
+    "temporalArc": "birth-entangle-collapse-rebirth",
+    "interaction": "none"
+  },
+  "mobileStrategy": "fiberCount 420->160 and pointsPerFiber 96->48 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "hopf-fibration",
+    "quaternion",
+    "linked-circles"
+  ]
+}

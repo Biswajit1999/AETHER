@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-27-elastic-mass-spring-lattice",
+  "slug": "elastic-mass-spring-lattice",
+  "seed": "aether:2026-08-10:a123-elastic-mass-spring-lattice",
+  "title": "Elastic Mass-Spring Lattice",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "PHYSICALLY_MODELLED",
+  "audioControls": [
+    "mid",
+    "onset",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "cubic-mass-spring-lattice",
+    "dynamics": "damped-hookean-spring-wave-propagation",
+    "sampling": "uniform-3d-grid-rest-configuration",
+    "shader": "strain-magnitude-hue-glow",
+    "audio": "mid-spring-stiffness-onset-impulse-injection-high-point-size",
+    "camera": "fixed-elevated-slow-sway",
+    "temporalArc": "continuous-elastic-wave-propagation",
+    "interaction": "none"
+  },
+  "mobileStrategy": "lattice resolution 13->9 per axis on coarse-pointer devices",
+  "duration": 24,
+  "tags": [
+    "elasticity",
+    "mass-spring",
+    "wave-propagation"
+  ]
+}

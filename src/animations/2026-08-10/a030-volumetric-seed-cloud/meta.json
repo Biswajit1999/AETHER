@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-030-volumetric-seed-cloud",
+  "slug": "volumetric-seed-cloud",
+  "seed": "aether:2026-08-10:a030-volumetric-seed-cloud",
+  "title": "Volumetric Seed Cloud",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "spherical-volume",
+    "dynamics": "radial-seed-breathing",
+    "sampling": "seeded-stratified-particle-sampling",
+    "shader": "additive-bichromatic-point-field",
+    "audio": "bass-displacement-mid-twist-high-luminance",
+    "camera": "slow-orbital-drift",
+    "temporalArc": "continuous-breathing-cycle",
+    "interaction": "gallery-navigation"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 18,
+  "tags": [
+    "spherical-volume",
+    "particles",
+    "audio-reactive"
+  ]
+}

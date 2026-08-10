@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-18-cosmic-web-filaments",
+  "slug": "cosmic-web-filaments",
+  "seed": "aether:2026-08-10:a114-cosmic-web-filaments",
+  "title": "Cosmic Web Filaments",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "implicit-zero-level-set-filament-sheets",
+    "dynamics": "static-field-with-slow-global-rotation",
+    "sampling": "rejection-sampled-multi-sine-field-threshold",
+    "shader": "filament-proximity-hue-gradient",
+    "audio": "bass-camera-push-mid-rotation-high-point-size",
+    "camera": "slow-object-tumble-fixed-camera",
+    "temporalArc": "static-web-continuous-rotation",
+    "interaction": "none"
+  },
+  "mobileStrategy": "targetCount 38000->16000 on coarse-pointer devices",
+  "duration": 22,
+  "tags": [
+    "cosmic-web",
+    "filaments",
+    "procedural"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-19-information-horizon-glyphs",
+  "slug": "information-horizon-glyphs",
+  "seed": "aether:2026-08-10:a115-information-horizon-glyphs",
+  "title": "Information Horizon Glyphs",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "fibonacci-sphere-boundary-shell",
+    "dynamics": "hashed-time-quantised-per-point-flicker",
+    "sampling": "fibonacci-sphere-seeded-bit-assignment",
+    "shader": "bit-value-flicker-tint",
+    "audio": "bass-rotation-speed-mid-flicker-cadence-high-point-size",
+    "camera": "static-frame-object-y-rotation",
+    "temporalArc": "continuous-data-flicker",
+    "interaction": "none"
+  },
+  "mobileStrategy": "particleCount 46000->20000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "information-theory",
+    "horizon",
+    "glyphs"
+  ]
+}

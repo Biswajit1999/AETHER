@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-21-genus-morphing-surface",
+  "slug": "genus-morphing-surface",
+  "seed": "aether:2026-08-10:a117-genus-morphing-surface",
+  "title": "Genus-Morphing Surface",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "sphere-torus-parametric-surface-blend",
+    "dynamics": "audio-modulated-homotopy-interpolation",
+    "sampling": "shared-uv-domain-dual-parametrisation",
+    "shader": "blend-factor-hue-gradient",
+    "audio": "bass-morph-rate-mid-rotation-high-point-size",
+    "camera": "static-frame-fixed-distance",
+    "temporalArc": "continuous-topology-oscillation",
+    "interaction": "none"
+  },
+  "mobileStrategy": "uSteps/vSteps reduced from 160x110 to 90x60 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "topology",
+    "morphing",
+    "genus"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "2026-08-10-human-035-neutron-star-kilonova",
+  "slug": "neutron-star-kilonova",
+  "seed": "aether:2026-08-10:a035-neutron-star-kilonova",
+  "title": "Compact Binary Ejecta Study",
+  "description": "An artistic compact-binary and equatorial-ejecta construction. The animation does not integrate relativistic inspiral, nuclear reactions, radiation transport or kilonova light curves.",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "compact-binary-ejecta",
+    "dynamics": "orbiting-compact-cores-and-repeating-ejecta-pulse",
+    "sampling": "seeded-stratified-astrophysical-particles",
+    "shader": "additive-bichromatic-radiance-field",
+    "audio": "bass-compression-mid-orbit-high-radiance",
+    "camera": "slow-observatory-orbit",
+    "temporalArc": "continuous-event-cycle",
+    "interaction": "interactive-gallery"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "astrophysics",
+    "compact-binary-ejecta",
+    "audio-reactive"
+  ]
+}

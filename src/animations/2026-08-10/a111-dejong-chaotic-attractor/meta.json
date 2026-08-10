@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-15-dejong-chaotic-attractor",
+  "slug": "dejong-chaotic-attractor",
+  "seed": "aether:2026-08-10:a111-dejong-chaotic-attractor",
+  "title": "De Jong Chaotic Attractor",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "de-jong-chaotic-map-point-cloud",
+    "dynamics": "seeded-iterated-2d-map-time-lag-embedding",
+    "sampling": "sequential-map-iteration-no-rejection",
+    "shader": "iteration-age-hue-gradient",
+    "audio": "bass-camera-push-mid-spin-speed-high-point-size",
+    "camera": "static-frame-object-tumble",
+    "temporalArc": "continuous-slow-tumble",
+    "interaction": "none"
+  },
+  "mobileStrategy": "iterations 60000->20000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "chaos",
+    "de-jong",
+    "attractor"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-09-human-01-radial-bloom",
+  "slug": "radial-bloom",
+  "seed": "aether:2026-08-09:a001-radial-bloom",
+  "title": "Radial Bloom",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "spherical-point-cloud",
+    "dynamics": "radial-wave-displacement",
+    "sampling": "stratified-random-sphere",
+    "shader": "additive-soft-circle-palette",
+    "audio": "bass-mid-displacement-high-point-size",
+    "camera": "static-frame-object-y-rotation",
+    "temporalArc": "continuous-drift",
+    "interaction": "none"
+  },
+  "mobileStrategy": "particleCount drops from 72000 to 32000 on coarse-pointer devices",
+  "duration": 15,
+  "tags": [
+    "baseline",
+    "particles",
+    "sphere"
+  ]
+}

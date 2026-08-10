@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-14-atomic-orbital-cloud",
+  "slug": "atomic-orbital-cloud",
+  "seed": "aether:2026-08-10:a110-atomic-orbital-cloud",
+  "title": "Atomic Orbital Cloud",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "3d-z-squared-orbital-probability-cloud",
+    "dynamics": "static-density-field-with-radial-jitter",
+    "sampling": "rejection-sampled-analytic-wavefunction-density",
+    "shader": "density-gradient-soft-circle",
+    "audio": "bass-uncertainty-jitter-mid-rotation-high-point-size",
+    "camera": "slow-orbital-drift",
+    "temporalArc": "static-cloud-continuous-jitter",
+    "interaction": "none"
+  },
+  "mobileStrategy": "targetCount 42000->18000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "quantum",
+    "orbital",
+    "probability-density"
+  ]
+}

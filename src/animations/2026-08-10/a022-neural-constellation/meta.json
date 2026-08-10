@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-022-neural-constellation",
+  "slug": "neural-constellation",
+  "seed": "aether:2026-08-10:a022-neural-constellation",
+  "title": "Neural Constellation",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "cluster-network",
+    "dynamics": "cluster-pulse-propagation",
+    "sampling": "seeded-stratified-particle-sampling",
+    "shader": "additive-bichromatic-point-field",
+    "audio": "bass-displacement-mid-twist-high-luminance",
+    "camera": "slow-orbital-drift",
+    "temporalArc": "continuous-breathing-cycle",
+    "interaction": "gallery-navigation"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 18,
+  "tags": [
+    "cluster-network",
+    "particles",
+    "audio-reactive"
+  ]
+}

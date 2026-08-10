@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-06-turing-reaction-diffusion",
+  "slug": "turing-reaction-diffusion",
+  "seed": "aether:2026-08-10:a032-turing-reaction-diffusion",
+  "title": "Turing Reaction-Diffusion",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "planar-reaction-diffusion-grid",
+    "dynamics": "gray-scott-precomputed-turing-pattern",
+    "sampling": "toroidal-grid-seeded-patch-perturbation",
+    "shader": "concentration-height-scan-glow",
+    "audio": "bass-relief-height-mid-scan-speed-high-point-size",
+    "camera": "slow-orbital-drift",
+    "temporalArc": "static-pattern-continuous-scan",
+    "interaction": "none"
+  },
+  "mobileStrategy": "gridSize 108->72 and simulation steps 3200->1800 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "reaction-diffusion",
+    "gray-scott",
+    "turing-pattern"
+  ]
+}

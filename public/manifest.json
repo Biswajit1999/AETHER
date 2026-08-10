@@ -1,0 +1,2261 @@
+{
+  "generatedAt": "2026-08-10T18:49:38.152Z",
+  "count": 80,
+  "animations": [
+    {
+      "order": 1,
+      "id": "2026-08-09-human-01-radial-bloom",
+      "slug": "radial-bloom",
+      "seed": "aether:2026-08-09:a001-radial-bloom",
+      "title": "Radial Bloom",
+      "date": "2026-08-09",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Radial Bloom visualises spherical point cloud. Its animation is organised around radial wave displacement, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "spherical-point-cloud",
+        "dynamics": "radial-wave-displacement",
+        "sampling": "stratified-random-sphere",
+        "shader": "additive-soft-circle-palette",
+        "audio": "bass-mid-displacement-high-point-size",
+        "camera": "static-frame-object-y-rotation",
+        "temporalArc": "continuous-drift",
+        "interaction": "none"
+      },
+      "tags": [
+        "baseline",
+        "particles",
+        "sphere"
+      ],
+      "duration": 15,
+      "path": "src/animations/2026-08-09/a001-radial-bloom"
+    },
+    {
+      "order": 2,
+      "id": "2026-08-10-human-01-hopf-linked-fibres",
+      "slug": "hopf-linked-fibres",
+      "seed": "aether:2026-08-10:a002-hopf-linked-fibres",
+      "title": "Hopf-Linked Fibres",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Hopf-Linked Fibres visualises hopf linked fibre shells. Its animation is organised around quaternion coupled phase flow, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "hopf-linked-fibre-shells",
+        "dynamics": "quaternion-coupled-phase-flow",
+        "sampling": "fibonacci-sphere-stratified-fibres",
+        "shader": "iridescent-fresnel-rim",
+        "audio": "bass-radial-pulse-mid-phase-coupling-high-shimmer",
+        "camera": "slow-quaternion-orbit-drift",
+        "temporalArc": "birth-entangle-collapse-rebirth",
+        "interaction": "none"
+      },
+      "tags": [
+        "hopf-fibration",
+        "quaternion",
+        "linked-circles"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a002-hopf-linked-fibres"
+    },
+    {
+      "order": 3,
+      "id": "2026-08-10-human-02-lorenz-attractor-trails",
+      "slug": "lorenz-attractor-trails",
+      "seed": "aether:2026-08-10:a003-lorenz-attractor-trails",
+      "title": "Lorenz Attractor Trails",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Lorenz Attractor Trails visualises strange attractor point cloud. Its animation is organised around lorenz coupled multi strand trajectory, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "strange-attractor-point-cloud",
+        "dynamics": "lorenz-coupled-multi-strand-trajectory",
+        "sampling": "seeded-rk-euler-integrated-trail",
+        "shader": "travelling-glow-window-ember-palette",
+        "audio": "bass-trail-thickness-mid-flow-speed-high-sparkle",
+        "camera": "lateral-parallax-sway",
+        "temporalArc": "continuous-flow-loop",
+        "interaction": "none"
+      },
+      "tags": [
+        "lorenz",
+        "chaos",
+        "attractor",
+        "trails"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a003-lorenz-attractor-trails"
+    },
+    {
+      "order": 4,
+      "id": "2026-08-10-human-03-cellular-emergence-lattice",
+      "slug": "cellular-emergence-lattice",
+      "seed": "aether:2026-08-10:a004-cellular-emergence-lattice",
+      "title": "Cellular Emergence Lattice",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Cellular Emergence Lattice visualises cubic voxel lattice swarm. Its animation is organised around wave front cellular activation rule, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "cubic-voxel-lattice-swarm",
+        "dynamics": "wave-front-cellular-activation-rule",
+        "sampling": "uniform-grid-with-seeded-per-cell-hash",
+        "shader": "threshold-activation-discard-glow",
+        "audio": "bass-activation-threshold-mid-propagation-speed-high-jitter",
+        "camera": "breathing-dolly-tilt",
+        "temporalArc": "continuous-rule-propagation-waves",
+        "interaction": "none"
+      },
+      "tags": [
+        "cellular-automaton",
+        "lattice",
+        "emergence"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a004-cellular-emergence-lattice"
+    },
+    {
+      "order": 5,
+      "id": "2026-08-10-human-04-gravitational-lensing-field",
+      "slug": "gravitational-lensing-field",
+      "seed": "aether:2026-08-10:a005-gravitational-lensing-field",
+      "title": "Gravitational Lensing Field",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Gravitational Lensing Field visualises fibonacci sphere starfield shell. Its animation is organised around differential lensing inspired swirl, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "fibonacci-sphere-starfield-shell",
+        "dynamics": "differential-lensing-inspired-swirl",
+        "sampling": "fibonacci-sphere-radius-jittered",
+        "shader": "core-proximity-glow-twinkle",
+        "audio": "bass-inward-pull-mid-swirl-rate-high-twinkle",
+        "camera": "fixed-position-slow-roll",
+        "temporalArc": "continuous-differential-rotation",
+        "interaction": "none"
+      },
+      "tags": [
+        "lensing",
+        "starfield",
+        "swirl"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a005-gravitational-lensing-field"
+    },
+    {
+      "order": 6,
+      "id": "2026-08-10-human-006-mobius-pulse-ribbon",
+      "slug": "mobius-pulse-ribbon",
+      "seed": "aether:2026-08-10:a006-mobius-pulse-ribbon",
+      "title": "Möbius Pulse Ribbon",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Möbius Pulse Ribbon visualises mobius strip. Its animation is organised around non orientable ribbon flow, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "mobius-strip",
+        "dynamics": "non-orientable-ribbon-flow",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "mobius-strip",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a006-mobius-pulse-ribbon"
+    },
+    {
+      "order": 7,
+      "id": "2026-08-10-human-007-klein-bottle-drift",
+      "slug": "klein-bottle-drift",
+      "seed": "aether:2026-08-10:a007-klein-bottle-drift",
+      "title": "Klein Bottle Drift",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Klein Bottle Drift visualises klein surface. Its animation is organised around immersed surface drift, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "klein-surface",
+        "dynamics": "immersed-surface-drift",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "klein-surface",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a007-klein-bottle-drift"
+    },
+    {
+      "order": 8,
+      "id": "2026-08-10-human-008-trefoil-signal-knot",
+      "slug": "trefoil-signal-knot",
+      "seed": "aether:2026-08-10:a008-trefoil-signal-knot",
+      "title": "Trefoil Signal Knot",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Trefoil Signal Knot visualises torus knot. Its animation is organised around travelling knot wave, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "torus-knot",
+        "dynamics": "travelling-knot-wave",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "torus-knot",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a008-trefoil-signal-knot"
+    },
+    {
+      "order": 9,
+      "id": "2026-08-10-human-009-gyroid-resonance-field",
+      "slug": "gyroid-resonance-field",
+      "seed": "aether:2026-08-10:a009-gyroid-resonance-field",
+      "title": "Gyroid Resonance Field",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Gyroid Resonance Field visualises gyroid level set. Its animation is organised around triply periodic field, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "gyroid-level-set",
+        "dynamics": "triply-periodic-field",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "gyroid-level-set",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a009-gyroid-resonance-field"
+    },
+    {
+      "order": 10,
+      "id": "2026-08-10-human-010-five-arm-spiral-nursery",
+      "slug": "five-arm-spiral-nursery",
+      "seed": "aether:2026-08-10:a010-five-arm-spiral-nursery",
+      "title": "Five-Arm Spiral Nursery",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Five-Arm Spiral Nursery visualises spiral galaxy. Its animation is organised around differential arm rotation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "spiral-galaxy",
+        "dynamics": "differential-arm-rotation",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "spiral-galaxy",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a010-five-arm-spiral-nursery"
+    },
+    {
+      "order": 11,
+      "id": "2026-08-10-human-011-chladni-membrane-bloom",
+      "slug": "chladni-membrane-bloom",
+      "seed": "aether:2026-08-10:a011-chladni-membrane-bloom",
+      "title": "Chladni Membrane Bloom",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Chladni Membrane Bloom visualises wave membrane. Its animation is organised around standing wave interference, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "wave-membrane",
+        "dynamics": "standing-wave-interference",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "wave-membrane",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a011-chladni-membrane-bloom"
+    },
+    {
+      "order": 12,
+      "id": "2026-08-10-human-012-toroidal-vortex-choir",
+      "slug": "toroidal-vortex-choir",
+      "seed": "aether:2026-08-10:a012-toroidal-vortex-choir",
+      "title": "Toroidal Vortex Choir",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Toroidal Vortex Choir visualises vortex ring. Its animation is organised around toroidal circulation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "vortex-ring",
+        "dynamics": "toroidal-circulation",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "vortex-ring",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a012-toroidal-vortex-choir"
+    },
+    {
+      "order": 13,
+      "id": "2026-08-10-human-013-sevenfold-petal-field",
+      "slug": "sevenfold-petal-field",
+      "seed": "aether:2026-08-10:a013-sevenfold-petal-field",
+      "title": "Sevenfold Petal Field",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Sevenfold Petal Field visualises polar flower. Its animation is organised around radial petal breathing, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "polar-flower",
+        "dynamics": "radial-petal-breathing",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "polar-flower",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a013-sevenfold-petal-field"
+    },
+    {
+      "order": 14,
+      "id": "2026-08-10-human-014-double-helix-harmonics",
+      "slug": "double-helix-harmonics",
+      "seed": "aether:2026-08-10:a014-double-helix-harmonics",
+      "title": "Double Helix Harmonics",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Double Helix Harmonics visualises double helix. Its animation is organised around counterphase helical flow, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "double-helix",
+        "dynamics": "counterphase-helical-flow",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "double-helix",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a014-double-helix-harmonics"
+    },
+    {
+      "order": 15,
+      "id": "2026-08-10-human-015-clifford-torus-projection",
+      "slug": "clifford-torus-projection",
+      "seed": "aether:2026-08-10:a015-clifford-torus-projection",
+      "title": "Clifford Torus Projection",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Clifford Torus Projection visualises clifford torus. Its animation is organised around four dimensional projection, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "clifford-torus",
+        "dynamics": "four-dimensional-projection",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "clifford-torus",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a015-clifford-torus-projection"
+    },
+    {
+      "order": 16,
+      "id": "2026-08-10-human-016-spherical-harmonic-tide",
+      "slug": "spherical-harmonic-tide",
+      "seed": "aether:2026-08-10:a016-spherical-harmonic-tide",
+      "title": "Spherical Harmonic Tide",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Spherical Harmonic Tide visualises spherical harmonic. Its animation is organised around multipole surface oscillation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "spherical-harmonic",
+        "dynamics": "multipole-surface-oscillation",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "spherical-harmonic",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a016-spherical-harmonic-tide"
+    },
+    {
+      "order": 17,
+      "id": "2026-08-10-human-017-quantum-cube-facets",
+      "slug": "quantum-cube-facets",
+      "seed": "aether:2026-08-10:a017-quantum-cube-facets",
+      "title": "Quantum Cube Facets",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Quantum Cube Facets visualises cube boundary. Its animation is organised around facet phase precession, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "cube-boundary",
+        "dynamics": "facet-phase-precession",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "cube-boundary",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a017-quantum-cube-facets"
+    },
+    {
+      "order": 18,
+      "id": "2026-08-10-human-018-conical-interference-rain",
+      "slug": "conical-interference-rain",
+      "seed": "aether:2026-08-10:a018-conical-interference-rain",
+      "title": "Conical Interference Rain",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Conical Interference Rain visualises cone field. Its animation is organised around axial interference flow, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "cone-field",
+        "dynamics": "axial-interference-flow",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "cone-field",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a018-conical-interference-rain"
+    },
+    {
+      "order": 19,
+      "id": "2026-08-10-human-019-helical-current-column",
+      "slug": "helical-current-column",
+      "seed": "aether:2026-08-10:a019-helical-current-column",
+      "title": "Helical Current Column",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Helical Current Column visualises helix column. Its animation is organised around longitudinal current wave, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "helix-column",
+        "dynamics": "longitudinal-current-wave",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "helix-column",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a019-helical-current-column"
+    },
+    {
+      "order": 20,
+      "id": "2026-08-10-human-020-spectral-ocean-surface",
+      "slug": "spectral-ocean-surface",
+      "seed": "aether:2026-08-10:a020-spectral-ocean-surface",
+      "title": "Spectral Ocean Surface",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Spectral Ocean Surface visualises wave plane. Its animation is organised around cross spectrum wave motion, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "wave-plane",
+        "dynamics": "cross-spectrum-wave-motion",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "wave-plane",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a020-spectral-ocean-surface"
+    },
+    {
+      "order": 21,
+      "id": "2026-08-10-human-021-accretion-disk-echo",
+      "slug": "accretion-disk-echo",
+      "seed": "aether:2026-08-10:a021-accretion-disk-echo",
+      "title": "Accretion Disk Echo",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Accretion Disk Echo visualises accretion disk. Its animation is organised around radial shear orbit, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "accretion-disk",
+        "dynamics": "radial-shear-orbit",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "accretion-disk",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a021-accretion-disk-echo"
+    },
+    {
+      "order": 22,
+      "id": "2026-08-10-human-022-neural-constellation",
+      "slug": "neural-constellation",
+      "seed": "aether:2026-08-10:a022-neural-constellation",
+      "title": "Neural Constellation",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Neural Constellation visualises cluster network. Its animation is organised around cluster pulse propagation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "cluster-network",
+        "dynamics": "cluster-pulse-propagation",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "cluster-network",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a022-neural-constellation"
+    },
+    {
+      "order": 23,
+      "id": "2026-08-10-human-023-crystalline-shell-choir",
+      "slug": "crystalline-shell-choir",
+      "seed": "aether:2026-08-10:a023-crystalline-shell-choir",
+      "title": "Crystalline Shell Choir",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Crystalline Shell Choir visualises quantised shells. Its animation is organised around shell mode resonance, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "quantised-shells",
+        "dynamics": "shell-mode-resonance",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "quantised-shells",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a023-crystalline-shell-choir"
+    },
+    {
+      "order": 24,
+      "id": "2026-08-10-human-024-superformula-organism",
+      "slug": "superformula-organism",
+      "seed": "aether:2026-08-10:a024-superformula-organism",
+      "title": "Superformula Organism",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Superformula Organism visualises superformula profile. Its animation is organised around morphogenetic radial flow, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "superformula-profile",
+        "dynamics": "morphogenetic-radial-flow",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "superformula-profile",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a024-superformula-organism"
+    },
+    {
+      "order": 25,
+      "id": "2026-08-10-human-025-lissajous-signal-loom",
+      "slug": "lissajous-signal-loom",
+      "seed": "aether:2026-08-10:a025-lissajous-signal-loom",
+      "title": "Lissajous Signal Loom",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Lissajous Signal Loom visualises lissajous curve. Its animation is organised around frequency ratio weaving, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "lissajous-curve",
+        "dynamics": "frequency-ratio-weaving",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "lissajous-curve",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a025-lissajous-signal-loom"
+    },
+    {
+      "order": 26,
+      "id": "2026-08-10-human-026-logarithmic-shell-memory",
+      "slug": "logarithmic-shell-memory",
+      "seed": "aether:2026-08-10:a026-logarithmic-shell-memory",
+      "title": "Logarithmic Shell Memory",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A seeded particle construction following the logarithmic spiral r = 0.12e^(0.08θ), lifted into a thin three-dimensional shell-like ribbon.",
+      "equation": "r(θ) = 0.12e^(0.08θ)",
+      "visual": {
+        "topology": "logarithmic-shell",
+        "dynamics": "exponential-radial-growth",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "logarithmic-shell",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a026-logarithmic-shell-memory"
+    },
+    {
+      "order": 27,
+      "id": "2026-08-10-human-027-polar-rose-oscillator",
+      "slug": "polar-rose-oscillator",
+      "seed": "aether:2026-08-10:a027-polar-rose-oscillator",
+      "title": "Polar Rose Oscillator",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Polar Rose Oscillator visualises polar rose. Its animation is organised around petal phase oscillation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "polar-rose",
+        "dynamics": "petal-phase-oscillation",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "polar-rose",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a027-polar-rose-oscillator"
+    },
+    {
+      "order": 28,
+      "id": "2026-08-10-human-028-particle-fountain-phase",
+      "slug": "particle-fountain-phase",
+      "seed": "aether:2026-08-10:a028-particle-fountain-phase",
+      "title": "Particle Fountain Phase",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Particle Fountain Phase visualises ballistic fountain. Its animation is organised around cyclic ballistic flow, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "ballistic-fountain",
+        "dynamics": "cyclic-ballistic-flow",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "ballistic-fountain",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a028-particle-fountain-phase"
+    },
+    {
+      "order": 29,
+      "id": "2026-08-10-human-029-nested-ring-quantisation",
+      "slug": "nested-ring-quantisation",
+      "seed": "aether:2026-08-10:a029-nested-ring-quantisation",
+      "title": "Nested Ring Quantisation",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Nested Ring Quantisation visualises nested rings. Its animation is organised around quantised ring precession, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "nested-rings",
+        "dynamics": "quantised-ring-precession",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "nested-rings",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a029-nested-ring-quantisation"
+    },
+    {
+      "order": 30,
+      "id": "2026-08-10-human-030-volumetric-seed-cloud",
+      "slug": "volumetric-seed-cloud",
+      "seed": "aether:2026-08-10:a030-volumetric-seed-cloud",
+      "title": "Volumetric Seed Cloud",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Volumetric Seed Cloud visualises spherical volume. Its animation is organised around radial seed breathing, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "spherical-volume",
+        "dynamics": "radial-seed-breathing",
+        "sampling": "seeded-stratified-particle-sampling",
+        "shader": "additive-bichromatic-point-field",
+        "audio": "bass-displacement-mid-twist-high-luminance",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "continuous-breathing-cycle",
+        "interaction": "gallery-navigation"
+      },
+      "tags": [
+        "spherical-volume",
+        "particles",
+        "audio-reactive"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a030-volumetric-seed-cloud"
+    },
+    {
+      "order": 31,
+      "id": "aether-031-andromeda-milky-way-encounter",
+      "slug": "andromeda-milky-way-encounter",
+      "seed": "aether:2026-08-10:a031-andromeda-milky-way-encounter",
+      "title": "Andromeda–Milky Way Encounter",
+      "date": "2026-08-10",
+      "classification": "PHYSICS_MODEL",
+      "description": "A time-evolving restricted N-body model of a merger-compatible Local Group encounter. Two softened galactic potentials respond to mutual gravity and momentum-conserving orbital drag while massless stellar tracers form bridges, shells and tidal tails.",
+      "physics": {
+        "model": "restricted N-body encounter",
+        "integrator": "fixed-step symplectic Euler",
+        "gravity": "two mutually interacting softened point-mass halo potentials",
+        "dissipation": "momentum-conserving phenomenological dynamical friction",
+        "tracers": "massless exponential-disc stellar particles",
+        "units": {
+          "length": "100 kpc",
+          "mass": "1e12 solar masses",
+          "time": "0.471 Gyr"
+        },
+        "scenario": "accelerated merger-compatible realization beginning in the pre-encounter phase",
+        "caveat": "This is an educational restricted N-body model, not a precision forecast. Current observations allow both merger and non-merger outcomes. Gas, star formation, halo substructure, M33 and the LMC are not resolved here."
+      },
+      "references": [
+        {
+          "title": "No certainty of a Milky Way–Andromeda collision",
+          "doi": "10.1038/s41550-025-02563-1",
+          "year": 2025
+        },
+        {
+          "title": "The collision between the Milky Way and Andromeda",
+          "doi": "10.1111/j.1365-2966.2008.13048.x",
+          "year": 2008
+        }
+      ],
+      "tags": [
+        "astrophysics",
+        "restricted-n-body",
+        "galaxy-dynamics",
+        "tidal-tails"
+      ],
+      "duration": 38,
+      "path": "src/animations/2026-08-10/a031-andromeda-milky-way-encounter"
+    },
+    {
+      "order": 32,
+      "id": "2026-08-10-human-032-binary-star-resonance",
+      "slug": "binary-star-resonance",
+      "seed": "aether:2026-08-10:a032-binary-star-resonance",
+      "title": "Binary Star Resonance",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A Newtonian two-body orbit in barycentric coordinates. Kepler's equation is solved each frame for an unequal-mass eccentric binary, while colour and halo size remain artistic audio responses.",
+      "equation": "M = E - e sin(E); x = a(cos(E)-e); y = a√(1-e²)sin(E)",
+      "numerics": "Eight Newton iterations per frame; G = 1, m₁ = 1.2, m₂ = 0.8, a = 1.45, e = 0.34",
+      "physics": {
+        "model": "Newtonian two-body Kepler orbit in barycentric coordinates",
+        "method": "Kepler equation solved by Newton iteration",
+        "units": "normalised simulation units with G = 1",
+        "caveat": "The orbit is an ideal isolated two-body model. Stellar structure, tides, mass transfer and relativistic effects are omitted; audio changes only halo scale and colour response."
+      },
+      "references": [
+        {
+          "title": "NASA GSFC: Kepler's Laws of Orbital Motion",
+          "url": "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/"
+        }
+      ],
+      "visual": {
+        "topology": "binary-stellar-cores",
+        "dynamics": "keplerian-barycentric-orbit",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "binary-stellar-cores",
+        "audio-reactive",
+        "keplerian-orbit"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a032-binary-star-resonance"
+    },
+    {
+      "order": 33,
+      "id": "2026-08-10-human-033-stellar-collision-bridge",
+      "slug": "stellar-collision-bridge",
+      "seed": "aether:2026-08-10:a033-stellar-collision-bridge",
+      "title": "Stellar Encounter Bridge Study",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A looping visual construction of two approaching particle volumes and a transient bridge. It does not solve stellar hydrodynamics, shocks, fusion or mass transfer.",
+      "visual": {
+        "topology": "colliding-stellar-volumes",
+        "dynamics": "periodic-approach-and-bridge-deformation",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "colliding-stellar-volumes",
+        "audio-reactive"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a033-stellar-collision-bridge"
+    },
+    {
+      "order": 34,
+      "id": "2026-08-10-human-034-supernova-shock-front",
+      "slug": "supernova-shock-front",
+      "seed": "aether:2026-08-10:a034-supernova-shock-front",
+      "title": "Supernova Shell Study",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A repeating radial particle-shell pulse inspired by supernova remnants. It is not a Sedov–Taylor blast-wave calculation or a hydrodynamic explosion model.",
+      "visual": {
+        "topology": "expanding-ejecta-shell",
+        "dynamics": "repeating-radial-shell-pulse",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "expanding-ejecta-shell",
+        "audio-reactive"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a034-supernova-shock-front"
+    },
+    {
+      "order": 35,
+      "id": "2026-08-10-human-035-neutron-star-kilonova",
+      "slug": "neutron-star-kilonova",
+      "seed": "aether:2026-08-10:a035-neutron-star-kilonova",
+      "title": "Compact Binary Ejecta Study",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "An artistic compact-binary and equatorial-ejecta construction. The animation does not integrate relativistic inspiral, nuclear reactions, radiation transport or kilonova light curves.",
+      "visual": {
+        "topology": "compact-binary-ejecta",
+        "dynamics": "orbiting-compact-cores-and-repeating-ejecta-pulse",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "compact-binary-ejecta",
+        "audio-reactive"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a035-neutron-star-kilonova"
+    },
+    {
+      "order": 36,
+      "id": "2026-08-10-human-036-relativistic-jet-engine",
+      "slug": "relativistic-jet-engine",
+      "seed": "aether:2026-08-10:a036-relativistic-jet-engine",
+      "title": "Bipolar Jet Field",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A repeating axial particle-flow field inspired by bipolar astrophysical jets. It does not calculate relativistic magnetohydrodynamics, Lorentz factors or radiative transfer.",
+      "visual": {
+        "topology": "bipolar-particle-jets",
+        "dynamics": "repeating-axial-particle-flow",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "bipolar-particle-jets",
+        "audio-reactive"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a036-relativistic-jet-engine"
+    },
+    {
+      "order": 37,
+      "id": "2026-08-10-human-037-tidal-disruption-stream",
+      "slug": "tidal-disruption-stream",
+      "seed": "aether:2026-08-10:a037-tidal-disruption-stream",
+      "title": "Tidal Disruption Stream",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Tidal Disruption Stream visualises stellar tidal stream. Its animation is organised around differential orbital shear, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "stellar-tidal-stream",
+        "dynamics": "differential-orbital-shear",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "stellar-tidal-stream",
+        "audio-reactive"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a037-tidal-disruption-stream"
+    },
+    {
+      "order": 38,
+      "id": "2026-08-10-human-038-planetary-nebula-wings",
+      "slug": "planetary-nebula-wings",
+      "seed": "aether:2026-08-10:a038-planetary-nebula-wings",
+      "title": "Planetary Nebula Wings",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Planetary Nebula Wings visualises bipolar nebular lobes. Its animation is organised around photoionised lobe expansion, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "bipolar-nebular-lobes",
+        "dynamics": "photoionised-lobe-expansion",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "bipolar-nebular-lobes",
+        "audio-reactive"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a038-planetary-nebula-wings"
+    },
+    {
+      "order": 39,
+      "id": "2026-08-10-human-039-magnetar-field-eruption",
+      "slug": "magnetar-field-eruption",
+      "seed": "aether:2026-08-10:a039-magnetar-field-eruption",
+      "title": "Magnetar Field Eruption",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Magnetar Field Eruption visualises magnetic field lines. Its animation is organised around torsional field eruption, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "magnetic-field-lines",
+        "dynamics": "torsional-field-eruption",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "magnetic-field-lines",
+        "audio-reactive"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a039-magnetar-field-eruption"
+    },
+    {
+      "order": 40,
+      "id": "2026-08-10-human-040-cosmic-web-assembly",
+      "slug": "cosmic-web-assembly",
+      "seed": "aether:2026-08-10:a040-cosmic-web-assembly",
+      "title": "Cosmic Web Assembly",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Cosmic Web Assembly visualises cosmic filament network. Its animation is organised around anisotropic filament collapse, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "cosmic-filament-network",
+        "dynamics": "anisotropic-filament-collapse",
+        "sampling": "seeded-stratified-astrophysical-particles",
+        "shader": "additive-bichromatic-radiance-field",
+        "audio": "bass-compression-mid-orbit-high-radiance",
+        "camera": "slow-observatory-orbit",
+        "temporalArc": "continuous-event-cycle",
+        "interaction": "interactive-gallery"
+      },
+      "tags": [
+        "astrophysics",
+        "cosmic-filament-network",
+        "audio-reactive"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a040-cosmic-web-assembly"
+    },
+    {
+      "order": 101,
+      "id": "2026-08-10-human-05-tesseract-edge-frame",
+      "slug": "tesseract-edge-frame",
+      "seed": "aether:2026-08-10:a031-tesseract-edge-frame",
+      "title": "Tesseract Edge Frame",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Tesseract Edge Frame visualises 4d hypercube edge wireframe. Its animation is organised around dual plane 4d rotation perspective projection, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "4d-hypercube-edge-wireframe",
+        "dynamics": "dual-plane-4d-rotation-perspective-projection",
+        "sampling": "edge-interpolated-4d-vertex-pairs",
+        "shader": "depth-clip-threshold-discard",
+        "audio": "bass-4d-depth-clip-mid-xw-rotation-high-point-size",
+        "camera": "static-frame-fixed-distance",
+        "temporalArc": "continuous-4d-tumble",
+        "interaction": "none"
+      },
+      "tags": [
+        "4d",
+        "tesseract",
+        "hypercube",
+        "wireframe"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a101-tesseract-edge-frame"
+    },
+    {
+      "order": 102,
+      "id": "2026-08-10-human-06-turing-reaction-diffusion",
+      "slug": "turing-reaction-diffusion",
+      "seed": "aether:2026-08-10:a032-turing-reaction-diffusion",
+      "title": "Turing Reaction-Diffusion",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Turing Reaction-Diffusion visualises planar reaction diffusion grid. Its animation is organised around gray scott precomputed turing pattern, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "planar-reaction-diffusion-grid",
+        "dynamics": "gray-scott-precomputed-turing-pattern",
+        "sampling": "toroidal-grid-seeded-patch-perturbation",
+        "shader": "concentration-height-scan-glow",
+        "audio": "bass-relief-height-mid-scan-speed-high-point-size",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "static-pattern-continuous-scan",
+        "interaction": "none"
+      },
+      "tags": [
+        "reaction-diffusion",
+        "gray-scott",
+        "turing-pattern"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a102-turing-reaction-diffusion"
+    },
+    {
+      "order": 103,
+      "id": "2026-08-10-human-07-ripple-tank-interference",
+      "slug": "ripple-tank-interference",
+      "seed": "aether:2026-08-10:a103-ripple-tank-interference",
+      "title": "Ripple Tank Interference",
+      "date": "2026-08-10",
+      "classification": "PHYSICALLY_MODELLED",
+      "description": "Ripple Tank Interference visualises planar ripple tank grid. Its animation is organised around three source circular wave superposition, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "planar-ripple-tank-grid",
+        "dynamics": "three-source-circular-wave-superposition",
+        "sampling": "uniform-grid-seeded-source-placement",
+        "shader": "amplitude-crest-trough-gradient",
+        "audio": "bass-wave-speed-mid-wavenumber-high-point-size",
+        "camera": "elevated-parallax-sway",
+        "temporalArc": "continuous-interference-flow",
+        "interaction": "none"
+      },
+      "tags": [
+        "waves",
+        "interference",
+        "ripple-tank"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a103-ripple-tank-interference"
+    },
+    {
+      "order": 104,
+      "id": "2026-08-10-human-08-poincare-hyperbolic-tiling",
+      "slug": "poincare-hyperbolic-tiling",
+      "seed": "aether:2026-08-10:a104-poincare-hyperbolic-tiling",
+      "title": "Poincaré Disk Hyperbolic Tree",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Poincaré Disk Hyperbolic Tree visualises poincare disk hyperbolic cayley tree. Its animation is organised around mobius translation branch recursion, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "poincare-disk-hyperbolic-cayley-tree",
+        "dynamics": "mobius-translation-branch-recursion",
+        "sampling": "recursive-generator-composition-edge-lerp",
+        "shader": "depth-gradient-travelling-pulse",
+        "audio": "bass-disk-breathing-mid-rotation-high-point-size",
+        "camera": "fixed-frame-slow-dolly-oscillation",
+        "temporalArc": "static-tree-continuous-pulse",
+        "interaction": "none"
+      },
+      "tags": [
+        "hyperbolic-geometry",
+        "poincare-disk",
+        "mobius-transform"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a104-poincare-hyperbolic-tiling"
+    },
+    {
+      "order": 105,
+      "id": "2026-08-10-human-09-few-body-gravity-swarm",
+      "slug": "few-body-gravity-swarm",
+      "seed": "aether:2026-08-10:a105-few-body-gravity-swarm",
+      "title": "Few-Body Gravity Swarm",
+      "date": "2026-08-10",
+      "classification": "PHYSICALLY_MODELLED",
+      "description": "Few-Body Gravity Swarm visualises five body orbital trail swarm. Its animation is organised around softened newtonian mutual gravity integration, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "five-body-orbital-trail-swarm",
+        "dynamics": "softened-newtonian-mutual-gravity-integration",
+        "sampling": "per-body-ring-buffer-trail",
+        "shader": "cosine-body-palette-trail-fade",
+        "audio": "bass-timestep-boost-mid-camera-orbit-rate-high-point-size",
+        "camera": "continuous-full-orbit",
+        "temporalArc": "continuous-n-body-evolution",
+        "interaction": "none"
+      },
+      "tags": [
+        "n-body",
+        "gravity",
+        "orbital-mechanics"
+      ],
+      "duration": 25,
+      "path": "src/animations/2026-08-10/a105-few-body-gravity-swarm"
+    },
+    {
+      "order": 106,
+      "id": "2026-08-10-human-10-recursive-sphere-fractal",
+      "slug": "recursive-sphere-fractal",
+      "seed": "aether:2026-08-10:a106-recursive-sphere-fractal",
+      "title": "Recursive Sphere Fractal",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Recursive Sphere Fractal visualises self similar sphere of spheres fractal. Its animation is organised around recursive generation subdivision, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "self-similar-sphere-of-spheres-fractal",
+        "dynamics": "recursive-generation-subdivision",
+        "sampling": "fibonacci-sphere-per-node-surface-sampling",
+        "shader": "generation-gradient-soft-circle",
+        "audio": "bass-per-point-pulse-mid-global-spin-high-point-size",
+        "camera": "lissajous-figure-eight-sway",
+        "temporalArc": "continuous-gentle-drift",
+        "interaction": "none"
+      },
+      "tags": [
+        "fractal",
+        "recursive",
+        "spheres"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a106-recursive-sphere-fractal"
+    },
+    {
+      "order": 107,
+      "id": "2026-08-10-human-11-branching-causal-graph",
+      "slug": "branching-causal-graph",
+      "seed": "aether:2026-08-10:a107-branching-causal-graph",
+      "title": "Branching Causal Graph",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Branching Causal Graph visualises branching causal event tree. Its animation is organised around outward causal influence pulse, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "branching-causal-event-tree",
+        "dynamics": "outward-causal-influence-pulse",
+        "sampling": "seeded-random-branch-count-tree-growth",
+        "shader": "depth-hue-travelling-pulse-glow",
+        "audio": "bass-structure-density-mid-pulse-speed-high-point-size",
+        "camera": "lateral-parallax-sway",
+        "temporalArc": "continuous-causal-propagation",
+        "interaction": "none"
+      },
+      "tags": [
+        "causal-graph",
+        "branching",
+        "speculative"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a107-branching-causal-graph"
+    },
+    {
+      "order": 108,
+      "id": "2026-08-10-human-12-membrane-collision-brane",
+      "slug": "membrane-collision-brane",
+      "seed": "aether:2026-08-10:a108-membrane-collision-brane",
+      "title": "Membrane Collision",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Membrane Collision visualises twin undulating membrane sheets. Its animation is organised around membrane interpenetration oscillation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "twin-undulating-membrane-sheets",
+        "dynamics": "membrane-interpenetration-oscillation",
+        "sampling": "uniform-grid-dual-sheet",
+        "shader": "sheet-blend-ripple-tint",
+        "audio": "bass-approach-amplitude-mid-ripple-frequency-high-point-size",
+        "camera": "fixed-elevated-three-quarter-view",
+        "temporalArc": "continuous-approach-passthrough-cycle",
+        "interaction": "none"
+      },
+      "tags": [
+        "brane",
+        "membrane",
+        "speculative-cosmology"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a108-membrane-collision-brane"
+    },
+    {
+      "order": 109,
+      "id": "2026-08-10-human-13-vacuum-bubble-nucleation",
+      "slug": "vacuum-bubble-nucleation",
+      "seed": "aether:2026-08-10:a109-vacuum-bubble-nucleation",
+      "title": "Vacuum Bubble Nucleation",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Vacuum Bubble Nucleation visualises nucleating expanding bubble shells. Its animation is organised around seeded stochastic birth radial expansion fade, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "nucleating-expanding-bubble-shells",
+        "dynamics": "seeded-stochastic-birth-radial-expansion-fade",
+        "sampling": "per-bubble-spherical-shell-sampling",
+        "shader": "age-fade-hue-cycled-bubble-tint",
+        "audio": "bass-bubble-lifetime-mid-expansion-rate-high-point-size",
+        "camera": "gentle-lateral-sway",
+        "temporalArc": "repeating-nucleation-cycles",
+        "interaction": "none"
+      },
+      "tags": [
+        "vacuum-bubble",
+        "nucleation",
+        "speculative-cosmology"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a109-vacuum-bubble-nucleation"
+    },
+    {
+      "order": 110,
+      "id": "2026-08-10-human-14-atomic-orbital-cloud",
+      "slug": "atomic-orbital-cloud",
+      "seed": "aether:2026-08-10:a110-atomic-orbital-cloud",
+      "title": "Atomic Orbital Cloud",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Atomic Orbital Cloud visualises 3d z squared orbital probability cloud. Its animation is organised around static density field with radial jitter, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "3d-z-squared-orbital-probability-cloud",
+        "dynamics": "static-density-field-with-radial-jitter",
+        "sampling": "rejection-sampled-analytic-wavefunction-density",
+        "shader": "density-gradient-soft-circle",
+        "audio": "bass-uncertainty-jitter-mid-rotation-high-point-size",
+        "camera": "slow-orbital-drift",
+        "temporalArc": "static-cloud-continuous-jitter",
+        "interaction": "none"
+      },
+      "tags": [
+        "quantum",
+        "orbital",
+        "probability-density"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a110-atomic-orbital-cloud"
+    },
+    {
+      "order": 111,
+      "id": "2026-08-10-human-15-dejong-chaotic-attractor",
+      "slug": "dejong-chaotic-attractor",
+      "seed": "aether:2026-08-10:a111-dejong-chaotic-attractor",
+      "title": "De Jong Chaotic Attractor",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "De Jong Chaotic Attractor visualises de jong chaotic map point cloud. Its animation is organised around seeded iterated 2d map time lag embedding, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "de-jong-chaotic-map-point-cloud",
+        "dynamics": "seeded-iterated-2d-map-time-lag-embedding",
+        "sampling": "sequential-map-iteration-no-rejection",
+        "shader": "iteration-age-hue-gradient",
+        "audio": "bass-camera-push-mid-spin-speed-high-point-size",
+        "camera": "static-frame-object-tumble",
+        "temporalArc": "continuous-slow-tumble",
+        "interaction": "none"
+      },
+      "tags": [
+        "chaos",
+        "de-jong",
+        "attractor"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a111-dejong-chaotic-attractor"
+    },
+    {
+      "order": 112,
+      "id": "2026-08-10-human-16-boids-flocking-swarm",
+      "slug": "boids-flocking-swarm",
+      "seed": "aether:2026-08-10:a112-boids-flocking-swarm",
+      "title": "Boids Flocking Swarm",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Boids Flocking Swarm visualises free flying agent swarm. Its animation is organised around reynolds separation alignment cohesion boids, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "free-flying-agent-swarm",
+        "dynamics": "reynolds-separation-alignment-cohesion-boids",
+        "sampling": "seeded-random-initial-positions-velocities",
+        "shader": "agent-phase-hue-soft-circle",
+        "audio": "bass-cohesion-strength-mid-alignment-weight-high-point-size",
+        "camera": "continuous-full-orbit",
+        "temporalArc": "continuous-emergent-flocking",
+        "interaction": "none"
+      },
+      "tags": [
+        "boids",
+        "flocking",
+        "emergent-swarm"
+      ],
+      "duration": 22,
+      "path": "src/animations/2026-08-10/a112-boids-flocking-swarm"
+    },
+    {
+      "order": 113,
+      "id": "2026-08-10-human-17-penrose-impossible-tribar",
+      "slug": "penrose-impossible-tribar",
+      "seed": "aether:2026-08-10:a113-penrose-impossible-tribar",
+      "title": "Penrose Impossible Tribar",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Penrose Impossible Tribar visualises three beam triangular loop. Its animation is organised around static fixed viewpoint illusion, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "three-beam-triangular-loop",
+        "dynamics": "static-fixed-viewpoint-illusion",
+        "sampling": "per-beam-jittered-linear-interpolation",
+        "shader": "tricolour-beam-flat-tint",
+        "audio": "bass-beam-surface-jitter-mid-jitter-frequency-high-point-size",
+        "camera": "locked-fixed-viewpoint-no-orbit",
+        "temporalArc": "static-form-subtle-shimmer",
+        "interaction": "none"
+      },
+      "tags": [
+        "impossible-geometry",
+        "penrose-triangle",
+        "illusion"
+      ],
+      "duration": 18,
+      "path": "src/animations/2026-08-10/a113-penrose-impossible-tribar"
+    },
+    {
+      "order": 114,
+      "id": "2026-08-10-human-18-cosmic-web-filaments",
+      "slug": "cosmic-web-filaments",
+      "seed": "aether:2026-08-10:a114-cosmic-web-filaments",
+      "title": "Cosmic Web Filaments",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Cosmic Web Filaments visualises implicit zero level set filament sheets. Its animation is organised around static field with slow global rotation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "implicit-zero-level-set-filament-sheets",
+        "dynamics": "static-field-with-slow-global-rotation",
+        "sampling": "rejection-sampled-multi-sine-field-threshold",
+        "shader": "filament-proximity-hue-gradient",
+        "audio": "bass-camera-push-mid-rotation-high-point-size",
+        "camera": "slow-object-tumble-fixed-camera",
+        "temporalArc": "static-web-continuous-rotation",
+        "interaction": "none"
+      },
+      "tags": [
+        "cosmic-web",
+        "filaments",
+        "procedural"
+      ],
+      "duration": 22,
+      "path": "src/animations/2026-08-10/a114-cosmic-web-filaments"
+    },
+    {
+      "order": 115,
+      "id": "2026-08-10-human-19-information-horizon-glyphs",
+      "slug": "information-horizon-glyphs",
+      "seed": "aether:2026-08-10:a115-information-horizon-glyphs",
+      "title": "Information Horizon Glyphs",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Information Horizon Glyphs visualises fibonacci sphere boundary shell. Its animation is organised around hashed time quantised per point flicker, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "fibonacci-sphere-boundary-shell",
+        "dynamics": "hashed-time-quantised-per-point-flicker",
+        "sampling": "fibonacci-sphere-seeded-bit-assignment",
+        "shader": "bit-value-flicker-tint",
+        "audio": "bass-rotation-speed-mid-flicker-cadence-high-point-size",
+        "camera": "static-frame-object-y-rotation",
+        "temporalArc": "continuous-data-flicker",
+        "interaction": "none"
+      },
+      "tags": [
+        "information-theory",
+        "horizon",
+        "glyphs"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a115-information-horizon-glyphs"
+    },
+    {
+      "order": 116,
+      "id": "2026-08-10-human-20-origami-dimensional-fold",
+      "slug": "origami-dimensional-fold",
+      "seed": "aether:2026-08-10:a116-origami-dimensional-fold",
+      "title": "Origami Dimensional Fold",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Origami Dimensional Fold visualises accordion panelled flat plane. Its animation is organised around per panel rigid hinge rotation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "accordion-panelled-flat-plane",
+        "dynamics": "per-panel-rigid-hinge-rotation",
+        "sampling": "uniform-grid-per-panel",
+        "shader": "alternating-panel-tint",
+        "audio": "bass-fold-depth-mid-fold-speed-high-point-size",
+        "camera": "lateral-parallax-sway",
+        "temporalArc": "continuous-fold-unfold-cycle",
+        "interaction": "none"
+      },
+      "tags": [
+        "origami",
+        "folding",
+        "dimensional"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a116-origami-dimensional-fold"
+    },
+    {
+      "order": 117,
+      "id": "2026-08-10-human-21-genus-morphing-surface",
+      "slug": "genus-morphing-surface",
+      "seed": "aether:2026-08-10:a117-genus-morphing-surface",
+      "title": "Genus-Morphing Surface",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Genus-Morphing Surface visualises sphere torus parametric surface blend. Its animation is organised around audio modulated homotopy interpolation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "sphere-torus-parametric-surface-blend",
+        "dynamics": "audio-modulated-homotopy-interpolation",
+        "sampling": "shared-uv-domain-dual-parametrisation",
+        "shader": "blend-factor-hue-gradient",
+        "audio": "bass-morph-rate-mid-rotation-high-point-size",
+        "camera": "static-frame-fixed-distance",
+        "temporalArc": "continuous-topology-oscillation",
+        "interaction": "none"
+      },
+      "tags": [
+        "topology",
+        "morphing",
+        "genus"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a117-genus-morphing-surface"
+    },
+    {
+      "order": 118,
+      "id": "2026-08-10-human-22-dipole-field-lines",
+      "slug": "dipole-field-lines",
+      "seed": "aether:2026-08-10:a118-dipole-field-lines",
+      "title": "Dipole Field Lines",
+      "date": "2026-08-10",
+      "classification": "PHYSICALLY_MODELLED",
+      "description": "Dipole Field Lines visualises magnetic dipole field line bundle. Its animation is organised around exact r equals r0 sin squared theta parametrisation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "magnetic-dipole-field-line-bundle",
+        "dynamics": "exact-r-equals-r0-sin-squared-theta-parametrisation",
+        "sampling": "per-line-azimuth-and-radius-sweep",
+        "shader": "travelling-flow-pulse-line-tint",
+        "audio": "bass-rotation-mid-flow-speed-high-point-size",
+        "camera": "static-frame-object-y-rotation",
+        "temporalArc": "continuous-field-line-flow",
+        "interaction": "none"
+      },
+      "tags": [
+        "dipole",
+        "field-lines",
+        "electromagnetism"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a118-dipole-field-lines"
+    },
+    {
+      "order": 119,
+      "id": "2026-08-10-human-23-simplicial-persistence-shell",
+      "slug": "simplicial-persistence-shell",
+      "seed": "aether:2026-08-10:a119-simplicial-persistence-shell",
+      "title": "Simplicial Persistence Shell",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Simplicial Persistence Shell visualises spherical point cloud nearest neighbour shell. Its animation is organised around growing epsilon vietoris rips filtration, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "spherical-point-cloud-nearest-neighbour-shell",
+        "dynamics": "growing-epsilon-vietoris-rips-filtration",
+        "sampling": "seeded-random-sphere-precomputed-nn-distance",
+        "shader": "filtration-birth-threshold-glow",
+        "audio": "bass-epsilon-amplitude-mid-sweep-speed-high-point-size",
+        "camera": "static-frame-object-y-rotation",
+        "temporalArc": "repeating-filtration-sweep",
+        "interaction": "none"
+      },
+      "tags": [
+        "topological-data-analysis",
+        "persistence",
+        "filtration"
+      ],
+      "duration": 22,
+      "path": "src/animations/2026-08-10/a119-simplicial-persistence-shell"
+    },
+    {
+      "order": 120,
+      "id": "2026-08-10-human-24-kuramoto-oscillator-ring",
+      "slug": "kuramoto-oscillator-ring",
+      "seed": "aether:2026-08-10:a120-kuramoto-oscillator-ring",
+      "title": "Kuramoto Oscillator Ring",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Kuramoto Oscillator Ring visualises ring arranged phase oscillator lattice. Its animation is organised around kuramoto mean field phase coupling, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "ring-arranged-phase-oscillator-lattice",
+        "dynamics": "kuramoto-mean-field-phase-coupling",
+        "sampling": "seeded-natural-frequency-distribution",
+        "shader": "phase-cosine-palette-soft-circle",
+        "audio": "bass-coupling-strength-mid-frequency-scale-high-point-size",
+        "camera": "fixed-elevated-three-quarter-view",
+        "temporalArc": "continuous-synchronisation-drift",
+        "interaction": "none"
+      },
+      "tags": [
+        "kuramoto",
+        "synchronisation",
+        "coupled-oscillators"
+      ],
+      "duration": 22,
+      "path": "src/animations/2026-08-10/a120-kuramoto-oscillator-ring"
+    },
+    {
+      "order": 121,
+      "id": "2026-08-10-human-25-bifurcation-diagram-volume",
+      "slug": "bifurcation-diagram-volume",
+      "seed": "aether:2026-08-10:a121-bifurcation-diagram-volume",
+      "title": "Bifurcation Diagram Volume",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Bifurcation Diagram Volume visualises logistic map bifurcation diagram volume. Its animation is organised around exact period doubling parameter sweep, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "logistic-map-bifurcation-diagram-volume",
+        "dynamics": "exact-period-doubling-parameter-sweep",
+        "sampling": "post-transient-iterate-retention-per-r",
+        "shader": "parameter-position-hue-gradient",
+        "audio": "bass-camera-push-mid-vertical-drift-rate-high-point-size",
+        "camera": "fixed-frame-slow-vertical-drift",
+        "temporalArc": "static-diagram-subtle-drift",
+        "interaction": "none"
+      },
+      "tags": [
+        "chaos",
+        "bifurcation",
+        "logistic-map"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a121-bifurcation-diagram-volume"
+    },
+    {
+      "order": 122,
+      "id": "2026-08-10-human-26-kelvin-helmholtz-shear-layer",
+      "slug": "kelvin-helmholtz-shear-layer",
+      "seed": "aether:2026-08-10:a122-kelvin-helmholtz-shear-layer",
+      "title": "Kelvin-Helmholtz Shear Layer",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Kelvin-Helmholtz Shear Layer visualises twin layer fluid interface strip. Its animation is organised around growing perturbation vortex roll up, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "twin-layer-fluid-interface-strip",
+        "dynamics": "growing-perturbation-vortex-roll-up",
+        "sampling": "uniform-strip-grid-dual-layer",
+        "shader": "layer-blend-flat-tint",
+        "audio": "bass-perturbation-amplitude-mid-growth-rate-high-point-size",
+        "camera": "fixed-elevated-view",
+        "temporalArc": "repeating-instability-growth-cycle",
+        "interaction": "none"
+      },
+      "tags": [
+        "fluid-dynamics",
+        "shear-instability",
+        "kelvin-helmholtz"
+      ],
+      "duration": 26,
+      "path": "src/animations/2026-08-10/a122-kelvin-helmholtz-shear-layer"
+    },
+    {
+      "order": 123,
+      "id": "2026-08-10-human-27-elastic-mass-spring-lattice",
+      "slug": "elastic-mass-spring-lattice",
+      "seed": "aether:2026-08-10:a123-elastic-mass-spring-lattice",
+      "title": "Elastic Mass-Spring Lattice",
+      "date": "2026-08-10",
+      "classification": "PHYSICALLY_MODELLED",
+      "description": "Elastic Mass-Spring Lattice visualises cubic mass spring lattice. Its animation is organised around damped hookean spring wave propagation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "cubic-mass-spring-lattice",
+        "dynamics": "damped-hookean-spring-wave-propagation",
+        "sampling": "uniform-3d-grid-rest-configuration",
+        "shader": "strain-magnitude-hue-glow",
+        "audio": "mid-spring-stiffness-onset-impulse-injection-high-point-size",
+        "camera": "fixed-elevated-slow-sway",
+        "temporalArc": "continuous-elastic-wave-propagation",
+        "interaction": "none"
+      },
+      "tags": [
+        "elasticity",
+        "mass-spring",
+        "wave-propagation"
+      ],
+      "duration": 24,
+      "path": "src/animations/2026-08-10/a123-elastic-mass-spring-lattice"
+    },
+    {
+      "order": 124,
+      "id": "2026-08-10-human-28-volumetric-nebula-cloud",
+      "slug": "volumetric-nebula-cloud",
+      "seed": "aether:2026-08-10:a124-volumetric-nebula-cloud",
+      "title": "Volumetric Nebula Cloud",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Volumetric Nebula Cloud visualises soft volumetric density cloud. Its animation is organised around multi octave sine field drift, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "soft-volumetric-density-cloud",
+        "dynamics": "multi-octave-sine-field-drift",
+        "sampling": "weighted-importance-sampling-fbm-density",
+        "shader": "large-soft-sprite-density-glow",
+        "audio": "bass-camera-push-mid-point-drift-high-point-size",
+        "camera": "static-frame-slow-object-rotation",
+        "temporalArc": "continuous-billowing-drift",
+        "interaction": "none"
+      },
+      "tags": [
+        "nebula",
+        "volumetric",
+        "procedural-noise"
+      ],
+      "duration": 22,
+      "path": "src/animations/2026-08-10/a124-volumetric-nebula-cloud"
+    },
+    {
+      "order": 125,
+      "id": "2026-08-10-human-29-hyperbolic-paraboloid-saddle",
+      "slug": "hyperbolic-paraboloid-saddle",
+      "seed": "aether:2026-08-10:a125-hyperbolic-paraboloid-saddle",
+      "title": "Hyperbolic Paraboloid Saddle",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Hyperbolic Paraboloid Saddle visualises hyperbolic paraboloid saddle grid. Its animation is organised around static surface audio scaled depth, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "hyperbolic-paraboloid-saddle-grid",
+        "dynamics": "static-surface-audio-scaled-depth",
+        "sampling": "uniform-xy-grid-analytic-surface",
+        "shader": "gaussian-curvature-colour-mapping",
+        "audio": "bass-saddle-depth-mid-rotation-high-point-size",
+        "camera": "fixed-elevated-view",
+        "temporalArc": "continuous-gentle-rotation",
+        "interaction": "none"
+      },
+      "tags": [
+        "differential-geometry",
+        "saddle-surface",
+        "curvature"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a125-hyperbolic-paraboloid-saddle"
+    },
+    {
+      "order": 126,
+      "id": "2026-08-10-human-30-roman-surface-immersion",
+      "slug": "roman-surface-immersion",
+      "seed": "aether:2026-08-10:a126-roman-surface-immersion",
+      "title": "Roman Surface Immersion",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Roman Surface Immersion visualises steiner roman surface rp2 immersion. Its animation is organised around static surface audio scaled pulse, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "steiner-roman-surface-rp2-immersion",
+        "dynamics": "static-surface-audio-scaled-pulse",
+        "sampling": "uniform-uv-analytic-parametrisation",
+        "shader": "v-parameter-hue-gradient",
+        "audio": "bass-surface-scale-mid-rotation-high-point-size",
+        "camera": "static-frame-fixed-distance",
+        "temporalArc": "continuous-gentle-tumble",
+        "interaction": "none"
+      },
+      "tags": [
+        "topology",
+        "roman-surface",
+        "projective-plane"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a126-roman-surface-immersion"
+    },
+    {
+      "order": 127,
+      "id": "2026-08-10-human-31-spectral-spiral-ribbon",
+      "slug": "spectral-spiral-ribbon",
+      "seed": "aether:2026-08-10:a127-spectral-spiral-ribbon",
+      "title": "Spectral Spiral Ribbon",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Spectral Spiral Ribbon visualises logarithmic spiral triple strand ribbon. Its animation is organised around per band independent strand pulse, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "logarithmic-spiral-triple-strand-ribbon",
+        "dynamics": "per-band-independent-strand-pulse",
+        "sampling": "parametric-spiral-arc-length-sampling",
+        "shader": "band-colour-coded-flat-tint",
+        "audio": "bass-mid-high-independent-per-strand-displacement",
+        "camera": "static-frame-object-y-rotation",
+        "temporalArc": "continuous-spectral-pulse",
+        "interaction": "none"
+      },
+      "tags": [
+        "spiral",
+        "spectral",
+        "logarithmic"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a127-spectral-spiral-ribbon"
+    },
+    {
+      "order": 128,
+      "id": "2026-08-10-human-32-gravitational-wave-chirp",
+      "slug": "gravitational-wave-chirp",
+      "seed": "aether:2026-08-10:a128-gravitational-wave-chirp",
+      "title": "Gravitational Wave Chirp",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Gravitational Wave Chirp visualises concentric ring shell. Its animation is organised around post newtonian quadrupole chirp frequency law, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "concentric-ring-shell",
+        "dynamics": "post-newtonian-quadrupole-chirp-frequency-law",
+        "sampling": "uniform-angular-ring-sampling",
+        "shader": "ring-phase-hue-gradient",
+        "audio": "bass-merger-time-mid-chirp-rate-high-point-size",
+        "camera": "static-frame-fixed-distance",
+        "temporalArc": "repeating-inspiral-chirp-cycle",
+        "interaction": "none"
+      },
+      "tags": [
+        "gravitational-waves",
+        "chirp",
+        "inspiral"
+      ],
+      "duration": 10,
+      "path": "src/animations/2026-08-10/a128-gravitational-wave-chirp"
+    },
+    {
+      "order": 129,
+      "id": "2026-08-10-human-33-lsystem-branching-timeline",
+      "slug": "lsystem-branching-timeline",
+      "seed": "aether:2026-08-10:a129-lsystem-branching-timeline",
+      "title": "L-System Branching Timeline",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "L-System Branching Timeline visualises l system fractal branching tree. Its animation is organised around deterministic string rewrite turtle interpretation, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "l-system-fractal-branching-tree",
+        "dynamics": "deterministic-string-rewrite-turtle-interpretation",
+        "sampling": "per-segment-interpolated-turtle-path",
+        "shader": "depth-hue-flicker-glow",
+        "audio": "bass-branch-sway-mid-depth-size-spread-high-flicker-rate",
+        "camera": "lateral-parallax-sway",
+        "temporalArc": "static-tree-continuous-flicker",
+        "interaction": "none"
+      },
+      "tags": [
+        "l-system",
+        "fractal",
+        "branching-timelines"
+      ],
+      "duration": 20,
+      "path": "src/animations/2026-08-10/a129-lsystem-branching-timeline"
+    },
+    {
+      "order": 130,
+      "id": "2026-08-10-human-34-droste-recursive-universe",
+      "slug": "droste-recursive-universe",
+      "seed": "aether:2026-08-10:a130-droste-recursive-universe",
+      "title": "Droste Recursive Universe",
+      "date": "2026-08-10",
+      "classification": "SPECULATIVE_ARTISTIC",
+      "description": "Droste Recursive Universe visualises nested exponential ring levels. Its animation is organised around continuous exponential self similar zoom, with interactive camera, colour and audio response controls.",
+      "visual": {
+        "topology": "nested-exponential-ring-levels",
+        "dynamics": "continuous-exponential-self-similar-zoom",
+        "sampling": "per-level-geometric-radius-progression",
+        "shader": "level-cycle-hue-fade",
+        "audio": "bass-level-cycle-offset-mid-zoom-rate-high-point-size",
+        "camera": "static-frame-fixed-distance",
+        "temporalArc": "repeating-infinite-zoom-loop",
+        "interaction": "none"
+      },
+      "tags": [
+        "droste-effect",
+        "recursive",
+        "self-similar-zoom"
+      ],
+      "duration": 22,
+      "path": "src/animations/2026-08-10/a130-droste-recursive-universe"
+    },
+    {
+      "order": 131,
+      "id": "aether-a131",
+      "slug": "rossler-continuous-chaos",
+      "seed": "aether:a131:rossler",
+      "title": "Rössler Continuous Chaos",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A Runge–Kutta integration of Rössler's three-variable continuous chaotic flow, shown as an evolving orbit through state space.",
+      "equation": "ẋ = −y − z; ẏ = x + 0.2y; ż = 0.2 + z(x − 5.7)",
+      "numerics": "RK4, fixed nondimensional step 0.012",
+      "references": [
+        {
+          "title": "O. E. Rössler, An Equation for Continuous Chaos (1976)",
+          "url": "https://doi.org/10.1016/0375-9601(76)90101-8"
+        }
+      ],
+      "visual": {
+        "topology": "rossler-attractor",
+        "dynamics": "continuous-chaotic-flow",
+        "sampling": "rk4-trajectory",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "chaos",
+        "ordinary-differential-equation",
+        "rossler"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a131-rossler-continuous-chaos"
+    },
+    {
+      "order": 132,
+      "id": "aether-a132",
+      "slug": "duffing-phase-loom",
+      "seed": "aether:a132:duffing",
+      "title": "Duffing Phase Loom",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A driven nonlinear spring traced through displacement, velocity and forcing phase, revealing the folded geometry of a Duffing response.",
+      "equation": "ẍ + 0.2ẋ − x + x³ = 0.3 cos(1.2t)",
+      "numerics": "RK4, fixed nondimensional step 0.012",
+      "references": [
+        {
+          "title": "Duffing oscillator, Scholarpedia",
+          "url": "https://doi.org/10.4249/scholarpedia.6327"
+        }
+      ],
+      "visual": {
+        "topology": "duffing-phase-portrait",
+        "dynamics": "driven-nonlinear-oscillation",
+        "sampling": "rk4-trajectory",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "nonlinear-dynamics",
+        "oscillator",
+        "duffing"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a132-duffing-phase-loom"
+    },
+    {
+      "order": 133,
+      "id": "aether-a133",
+      "slug": "chua-double-scroll",
+      "seed": "aether:a133:chua",
+      "title": "Chua Double Scroll",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "The canonical piecewise-linear Chua circuit equations integrated into their characteristic two-lobed chaotic trajectory.",
+      "equation": "ẋ = 15.6(y − x − h(x)); ẏ = x − y + z; ż = −28y",
+      "numerics": "RK4, fixed nondimensional step 0.004",
+      "references": [
+        {
+          "title": "Chua, Komuro & Matsumoto, The Double Scroll Family (1986)",
+          "url": "https://doi.org/10.1109/TCS.1986.1085869"
+        }
+      ],
+      "visual": {
+        "topology": "chua-double-scroll",
+        "dynamics": "piecewise-linear-chaotic-flow",
+        "sampling": "rk4-trajectory",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "chaos",
+        "circuit",
+        "double-scroll"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a133-chua-double-scroll"
+    },
+    {
+      "order": 134,
+      "id": "aether-a134",
+      "slug": "henon-heiles-hamiltonian",
+      "seed": "aether:a134:henon-heiles",
+      "title": "Hénon–Heiles Hamiltonian",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A phase-space projection of the Hénon–Heiles Hamiltonian, originally introduced while investigating galactic orbital integrals.",
+      "equation": "H = ½(pₓ²+pᵧ²+x²+y²) + x²y − y³/3",
+      "numerics": "RK4 projection (x, y, pₓ), fixed step 0.009",
+      "references": [
+        {
+          "title": "Hénon & Heiles, The Applicability of the Third Integral of Motion (1964)",
+          "url": "https://doi.org/10.1086/109234"
+        }
+      ],
+      "visual": {
+        "topology": "henon-heiles-orbit",
+        "dynamics": "hamiltonian-phase-flow",
+        "sampling": "rk4-trajectory",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "hamiltonian",
+        "phase-space",
+        "galactic-dynamics"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a134-henon-heiles-hamiltonian"
+    },
+    {
+      "order": 135,
+      "id": "aether-a135",
+      "slug": "double-pendulum-state-weave",
+      "seed": "aether:a135:double-pendulum",
+      "title": "Double Pendulum State Weave",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "The explicit equal-mass, equal-length double-pendulum equations projected from angular state into the second bob's position and first-arm velocity.",
+      "equation": "δ=a−b; ä=[−3sin a−sin(a−2b)−2sinδ(v²+u²cosδ)]/[3−cos(2δ)]; b̈=2sinδ[2u²+2cos a+v²cosδ]/[3−cos(2δ)]",
+      "numerics": "RK4, equal masses and lengths, g=1, fixed step 0.006; trajectory precomputed once at load",
+      "references": [
+        {
+          "title": "University of Sydney School of Physics — Double Pendulum",
+          "url": "https://www.physics.usyd.edu.au/~wheat/dpend_html/"
+        }
+      ],
+      "visual": {
+        "topology": "double-pendulum-phase-weave",
+        "dynamics": "coupled-chaotic-mechanics",
+        "sampling": "rk4-trajectory",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "mechanics",
+        "double-pendulum",
+        "chaos"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a135-double-pendulum-state-weave"
+    },
+    {
+      "order": 136,
+      "id": "aether-a136",
+      "slug": "ikeda-optical-cavity-map",
+      "seed": "aether:a136:ikeda",
+      "title": "Ikeda Optical Cavity Map",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A discrete complex map of nonlinear optical ring-cavity feedback, lifted into a gently modulated three-dimensional orbit.",
+      "equation": "zₙ₊₁ = 1 + 0.9zₙ exp[i(0.4 − 6/(1+|zₙ|²))]",
+      "numerics": "Direct discrete iteration",
+      "references": [
+        {
+          "title": "K. Ikeda, Multiple-valued stationary state and its instability (1979)",
+          "url": "https://doi.org/10.1016/0030-4018(79)90090-7"
+        }
+      ],
+      "visual": {
+        "topology": "ikeda-map-attractor",
+        "dynamics": "discrete-optical-feedback",
+        "sampling": "iterated-map",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "optics",
+        "iterated-map",
+        "ikeda"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a136-ikeda-optical-cavity-map"
+    },
+    {
+      "order": 137,
+      "id": "aether-a137",
+      "slug": "henon-strange-attractor",
+      "seed": "aether:a137:henon-map",
+      "title": "Hénon Strange Attractor",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Hénon's two-dimensional quadratic recurrence rendered as orbit dust with iteration phase lifted into depth.",
+      "equation": "xₙ₊₁ = 1 − 1.4xₙ² + yₙ; yₙ₊₁ = 0.3xₙ",
+      "numerics": "Direct discrete iteration",
+      "references": [
+        {
+          "title": "M. Hénon, A Two-Dimensional Mapping with a Strange Attractor (1976)",
+          "url": "https://doi.org/10.1007/BF01608556"
+        }
+      ],
+      "visual": {
+        "topology": "henon-map-dust",
+        "dynamics": "quadratic-discrete-chaos",
+        "sampling": "iterated-map",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "chaos",
+        "iterated-map",
+        "henon"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a137-henon-strange-attractor"
+    },
+    {
+      "order": 138,
+      "id": "aether-a138",
+      "slug": "lorenz-96-weather-ring",
+      "seed": "aether:a138:lorenz96",
+      "title": "Lorenz–96 Weather Ring",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A twelve-variable Lorenz–96 cyclic system projected from three equally spaced sites, exposing forced, dissipative, advective chaos.",
+      "equation": "Ẋᵢ = (Xᵢ₊₁ − Xᵢ₋₂)Xᵢ₋₁ − Xᵢ + 8",
+      "numerics": "RK4, 12 cyclic variables, F=8, fixed step 0.008",
+      "references": [
+        {
+          "title": "E. N. Lorenz, Predictability — a problem partly solved (1996)",
+          "url": "https://doi.org/10.1017/CBO9780511617652.004"
+        }
+      ],
+      "visual": {
+        "topology": "lorenz96-state-ring",
+        "dynamics": "forced-dissipative-advection",
+        "sampling": "rk4-trajectory",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "weather-model",
+        "chaos",
+        "coupled-system"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a138-lorenz-96-weather-ring"
+    },
+    {
+      "order": 139,
+      "id": "aether-a139",
+      "slug": "thomas-cyclic-labyrinth",
+      "seed": "aether:a139:thomas",
+      "title": "Thomas Cyclic Labyrinth",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "A cyclically symmetric sine-coupled flow whose weak damping produces a labyrinthine chaotic walk through three dimensions.",
+      "equation": "ẋ = sin(y) − 0.208186x; ẏ = sin(z) − 0.208186y; ż = sin(x) − 0.208186z",
+      "numerics": "RK4, fixed nondimensional step 0.035",
+      "references": [
+        {
+          "title": "Thomas system overview and source trail",
+          "url": "https://doi.org/10.1016/j.physleta.2017.12.022"
+        }
+      ],
+      "visual": {
+        "topology": "thomas-labyrinth-attractor",
+        "dynamics": "cyclic-symmetric-chaos",
+        "sampling": "rk4-trajectory",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "chaos",
+        "cyclic-symmetry",
+        "labyrinth"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a139-thomas-cyclic-labyrinth"
+    },
+    {
+      "order": 140,
+      "id": "aether-a140",
+      "slug": "kuramoto-synchronisation-field",
+      "seed": "aether:a140:kuramoto",
+      "title": "Kuramoto Synchronisation Field",
+      "date": "2026-08-10",
+      "classification": "MATHEMATICALLY_INSPIRED",
+      "description": "Twenty-four globally coupled phase oscillators move through partial coherence; the path combines one oscillator's phase with the ensemble order parameter.",
+      "equation": "θ̇ᵢ = ωᵢ + (K/N)Σⱼ sin(θⱼ − θᵢ)",
+      "numerics": "RK4, 24 oscillators, K=0.65, fixed step 0.025",
+      "references": [
+        {
+          "title": "Y. Kuramoto, Self-entrainment of a population of coupled non-linear oscillators (1975)",
+          "url": "https://doi.org/10.1007/BFb0013365"
+        }
+      ],
+      "visual": {
+        "topology": "kuramoto-order-parameter",
+        "dynamics": "coupled-phase-synchronisation",
+        "sampling": "rk4-trajectory",
+        "shader": "moving-orbit-head",
+        "audio": "point-energy",
+        "camera": "orbit-controls"
+      },
+      "tags": [
+        "synchronisation",
+        "coupled-oscillators",
+        "kuramoto"
+      ],
+      "duration": 32,
+      "path": "src/animations/2026-08-10/a140-kuramoto-synchronisation-field"
+    }
+  ]
+}

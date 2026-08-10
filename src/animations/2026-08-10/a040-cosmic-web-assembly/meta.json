@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-040-cosmic-web-assembly",
+  "slug": "cosmic-web-assembly",
+  "seed": "aether:2026-08-10:a040-cosmic-web-assembly",
+  "title": "Cosmic Web Assembly",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "cosmic-filament-network",
+    "dynamics": "anisotropic-filament-collapse",
+    "sampling": "seeded-stratified-astrophysical-particles",
+    "shader": "additive-bichromatic-radiance-field",
+    "audio": "bass-compression-mid-orbit-high-radiance",
+    "camera": "slow-observatory-orbit",
+    "temporalArc": "continuous-event-cycle",
+    "interaction": "interactive-gallery"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "astrophysics",
+    "cosmic-filament-network",
+    "audio-reactive"
+  ]
+}

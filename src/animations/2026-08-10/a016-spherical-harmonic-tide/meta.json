@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-016-spherical-harmonic-tide",
+  "slug": "spherical-harmonic-tide",
+  "seed": "aether:2026-08-10:a016-spherical-harmonic-tide",
+  "title": "Spherical Harmonic Tide",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "spherical-harmonic",
+    "dynamics": "multipole-surface-oscillation",
+    "sampling": "seeded-stratified-particle-sampling",
+    "shader": "additive-bichromatic-point-field",
+    "audio": "bass-displacement-mid-twist-high-luminance",
+    "camera": "slow-orbital-drift",
+    "temporalArc": "continuous-breathing-cycle",
+    "interaction": "gallery-navigation"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 18,
+  "tags": [
+    "spherical-harmonic",
+    "particles",
+    "audio-reactive"
+  ]
+}

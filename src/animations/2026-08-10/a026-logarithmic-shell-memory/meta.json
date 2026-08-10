@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-10-human-026-logarithmic-shell-memory",
+  "slug": "logarithmic-shell-memory",
+  "seed": "aether:2026-08-10:a026-logarithmic-shell-memory",
+  "title": "Logarithmic Shell Memory",
+  "description": "A seeded particle construction following the logarithmic spiral r = 0.12e^(0.08θ), lifted into a thin three-dimensional shell-like ribbon.",
+  "equation": "r(θ) = 0.12e^(0.08θ)",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "logarithmic-shell",
+    "dynamics": "exponential-radial-growth",
+    "sampling": "seeded-stratified-particle-sampling",
+    "shader": "additive-bichromatic-point-field",
+    "audio": "bass-displacement-mid-twist-high-luminance",
+    "camera": "slow-orbital-drift",
+    "temporalArc": "continuous-breathing-cycle",
+    "interaction": "gallery-navigation"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 18,
+  "tags": [
+    "logarithmic-shell",
+    "particles",
+    "audio-reactive"
+  ]
+}

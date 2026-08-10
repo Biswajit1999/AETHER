@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-28-volumetric-nebula-cloud",
+  "slug": "volumetric-nebula-cloud",
+  "seed": "aether:2026-08-10:a124-volumetric-nebula-cloud",
+  "title": "Volumetric Nebula Cloud",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "soft-volumetric-density-cloud",
+    "dynamics": "multi-octave-sine-field-drift",
+    "sampling": "weighted-importance-sampling-fbm-density",
+    "shader": "large-soft-sprite-density-glow",
+    "audio": "bass-camera-push-mid-point-drift-high-point-size",
+    "camera": "static-frame-slow-object-rotation",
+    "temporalArc": "continuous-billowing-drift",
+    "interaction": "none"
+  },
+  "mobileStrategy": "targetCount 32000->14000 on coarse-pointer devices",
+  "duration": 22,
+  "tags": [
+    "nebula",
+    "volumetric",
+    "procedural-noise"
+  ]
+}

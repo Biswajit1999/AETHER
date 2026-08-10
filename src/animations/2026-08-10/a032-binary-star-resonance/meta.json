@@ -1,0 +1,44 @@
+{
+  "id": "2026-08-10-human-032-binary-star-resonance",
+  "slug": "binary-star-resonance",
+  "seed": "aether:2026-08-10:a032-binary-star-resonance",
+  "title": "Binary Star Resonance",
+  "description": "A Newtonian two-body orbit in barycentric coordinates. Kepler's equation is solved each frame for an unequal-mass eccentric binary, while colour and halo size remain artistic audio responses.",
+  "equation": "M = E - e sin(E); x = a(cos(E)-e); y = a√(1-e²)sin(E)",
+  "numerics": "Eight Newton iterations per frame; G = 1, m₁ = 1.2, m₂ = 0.8, a = 1.45, e = 0.34",
+  "physics": {
+    "model": "Newtonian two-body Kepler orbit in barycentric coordinates",
+    "method": "Kepler equation solved by Newton iteration",
+    "units": "normalised simulation units with G = 1",
+    "caveat": "The orbit is an ideal isolated two-body model. Stellar structure, tides, mass transfer and relativistic effects are omitted; audio changes only halo scale and colour response."
+  },
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "binary-stellar-cores",
+    "dynamics": "keplerian-barycentric-orbit",
+    "sampling": "seeded-stratified-astrophysical-particles",
+    "shader": "additive-bichromatic-radiance-field",
+    "audio": "bass-compression-mid-orbit-high-radiance",
+    "camera": "slow-observatory-orbit",
+    "temporalArc": "continuous-event-cycle",
+    "interaction": "interactive-gallery"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 20,
+  "references": [
+    {"title":"NASA GSFC: Kepler's Laws of Orbital Motion","url":"https://science.nasa.gov/solar-system/orbits-and-keplers-laws/"}
+  ],
+  "tags": [
+    "astrophysics",
+    "binary-stellar-cores",
+    "audio-reactive",
+    "keplerian-orbit"
+  ]
+}

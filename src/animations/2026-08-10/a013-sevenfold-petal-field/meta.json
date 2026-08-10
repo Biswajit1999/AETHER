@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-013-sevenfold-petal-field",
+  "slug": "sevenfold-petal-field",
+  "seed": "aether:2026-08-10:a013-sevenfold-petal-field",
+  "title": "Sevenfold Petal Field",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "polar-flower",
+    "dynamics": "radial-petal-breathing",
+    "sampling": "seeded-stratified-particle-sampling",
+    "shader": "additive-bichromatic-point-field",
+    "audio": "bass-displacement-mid-twist-high-luminance",
+    "camera": "slow-orbital-drift",
+    "temporalArc": "continuous-breathing-cycle",
+    "interaction": "gallery-navigation"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 18,
+  "tags": [
+    "polar-flower",
+    "particles",
+    "audio-reactive"
+  ]
+}

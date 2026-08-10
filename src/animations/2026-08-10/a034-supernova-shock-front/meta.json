@@ -1,0 +1,32 @@
+{
+  "id": "2026-08-10-human-034-supernova-shock-front",
+  "slug": "supernova-shock-front",
+  "seed": "aether:2026-08-10:a034-supernova-shock-front",
+  "title": "Supernova Shell Study",
+  "description": "A repeating radial particle-shell pulse inspired by supernova remnants. It is not a Sedov–Taylor blast-wave calculation or a hydrodynamic explosion model.",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "expanding-ejecta-shell",
+    "dynamics": "repeating-radial-shell-pulse",
+    "sampling": "seeded-stratified-astrophysical-particles",
+    "shader": "additive-bichromatic-radiance-field",
+    "audio": "bass-compression-mid-orbit-high-radiance",
+    "camera": "slow-observatory-orbit",
+    "temporalArc": "continuous-event-cycle",
+    "interaction": "interactive-gallery"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "astrophysics",
+    "expanding-ejecta-shell",
+    "audio-reactive"
+  ]
+}

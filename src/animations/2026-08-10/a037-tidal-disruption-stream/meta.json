@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-037-tidal-disruption-stream",
+  "slug": "tidal-disruption-stream",
+  "seed": "aether:2026-08-10:a037-tidal-disruption-stream",
+  "title": "Tidal Disruption Stream",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "stellar-tidal-stream",
+    "dynamics": "differential-orbital-shear",
+    "sampling": "seeded-stratified-astrophysical-particles",
+    "shader": "additive-bichromatic-radiance-field",
+    "audio": "bass-compression-mid-orbit-high-radiance",
+    "camera": "slow-observatory-orbit",
+    "temporalArc": "continuous-event-cycle",
+    "interaction": "interactive-gallery"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "astrophysics",
+    "stellar-tidal-stream",
+    "audio-reactive"
+  ]
+}

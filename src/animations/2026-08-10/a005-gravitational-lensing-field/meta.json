@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-04-gravitational-lensing-field",
+  "slug": "gravitational-lensing-field",
+  "seed": "aether:2026-08-10:a005-gravitational-lensing-field",
+  "title": "Gravitational Lensing Field",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "fibonacci-sphere-starfield-shell",
+    "dynamics": "differential-lensing-inspired-swirl",
+    "sampling": "fibonacci-sphere-radius-jittered",
+    "shader": "core-proximity-glow-twinkle",
+    "audio": "bass-inward-pull-mid-swirl-rate-high-twinkle",
+    "camera": "fixed-position-slow-roll",
+    "temporalArc": "continuous-differential-rotation",
+    "interaction": "none"
+  },
+  "mobileStrategy": "particleCount 60000->26000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "lensing",
+    "starfield",
+    "swirl"
+  ]
+}

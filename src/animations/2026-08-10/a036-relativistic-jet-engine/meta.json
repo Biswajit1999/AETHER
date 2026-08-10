@@ -1,0 +1,32 @@
+{
+  "id": "2026-08-10-human-036-relativistic-jet-engine",
+  "slug": "relativistic-jet-engine",
+  "seed": "aether:2026-08-10:a036-relativistic-jet-engine",
+  "title": "Bipolar Jet Field",
+  "description": "A repeating axial particle-flow field inspired by bipolar astrophysical jets. It does not calculate relativistic magnetohydrodynamics, Lorentz factors or radiative transfer.",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "bipolar-particle-jets",
+    "dynamics": "repeating-axial-particle-flow",
+    "sampling": "seeded-stratified-astrophysical-particles",
+    "shader": "additive-bichromatic-radiance-field",
+    "audio": "bass-compression-mid-orbit-high-radiance",
+    "camera": "slow-observatory-orbit",
+    "temporalArc": "continuous-event-cycle",
+    "interaction": "interactive-gallery"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "astrophysics",
+    "bipolar-particle-jets",
+    "audio-reactive"
+  ]
+}

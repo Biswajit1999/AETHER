@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-24-kuramoto-oscillator-ring",
+  "slug": "kuramoto-oscillator-ring",
+  "seed": "aether:2026-08-10:a120-kuramoto-oscillator-ring",
+  "title": "Kuramoto Oscillator Ring",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "ring-arranged-phase-oscillator-lattice",
+    "dynamics": "kuramoto-mean-field-phase-coupling",
+    "sampling": "seeded-natural-frequency-distribution",
+    "shader": "phase-cosine-palette-soft-circle",
+    "audio": "bass-coupling-strength-mid-frequency-scale-high-point-size",
+    "camera": "fixed-elevated-three-quarter-view",
+    "temporalArc": "continuous-synchronisation-drift",
+    "interaction": "none"
+  },
+  "mobileStrategy": "oscillator count 320->140 on coarse-pointer devices",
+  "duration": 22,
+  "tags": [
+    "kuramoto",
+    "synchronisation",
+    "coupled-oscillators"
+  ]
+}

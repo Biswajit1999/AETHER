@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-16-boids-flocking-swarm",
+  "slug": "boids-flocking-swarm",
+  "seed": "aether:2026-08-10:a112-boids-flocking-swarm",
+  "title": "Boids Flocking Swarm",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "free-flying-agent-swarm",
+    "dynamics": "reynolds-separation-alignment-cohesion-boids",
+    "sampling": "seeded-random-initial-positions-velocities",
+    "shader": "agent-phase-hue-soft-circle",
+    "audio": "bass-cohesion-strength-mid-alignment-weight-high-point-size",
+    "camera": "continuous-full-orbit",
+    "temporalArc": "continuous-emergent-flocking",
+    "interaction": "none"
+  },
+  "mobileStrategy": "agentCount 620->260 on coarse-pointer devices",
+  "duration": 22,
+  "tags": [
+    "boids",
+    "flocking",
+    "emergent-swarm"
+  ]
+}

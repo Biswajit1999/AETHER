@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-11-branching-causal-graph",
+  "slug": "branching-causal-graph",
+  "seed": "aether:2026-08-10:a107-branching-causal-graph",
+  "title": "Branching Causal Graph",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "branching-causal-event-tree",
+    "dynamics": "outward-causal-influence-pulse",
+    "sampling": "seeded-random-branch-count-tree-growth",
+    "shader": "depth-hue-travelling-pulse-glow",
+    "audio": "bass-structure-density-mid-pulse-speed-high-point-size",
+    "camera": "lateral-parallax-sway",
+    "temporalArc": "continuous-causal-propagation",
+    "interaction": "none"
+  },
+  "mobileStrategy": "maxDepth 9->7 and pointsPerEdge 18->10 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "causal-graph",
+    "branching",
+    "speculative"
+  ]
+}

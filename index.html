@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>AETHER — Computational Visual Laboratory</title>
+  <meta name="description" content="AETHER is Biswajit Jana’s computational visual laboratory for interactive mathematics, physics, particle systems and real-time audiovisual studies." />
+  <meta name="author" content="Biswajit Jana" /><meta name="theme-color" content="#030711" />
+  <meta property="og:title" content="AETHER — Computational Visual Laboratory" />
+  <meta property="og:description" content="An evolving laboratory of interactive computational animation, created and curated by Biswajit Jana." />
+  <meta property="og:image" content="https://biswajit1999.github.io/AETHER/social/aether-social-preview.jpg" />
+  <meta property="og:type" content="website" /><meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="./src/styles.css" /><link rel="stylesheet" href="./src/physics.css" />
+</head>
+<body><main id="app">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="AETHER home"><span class="brand-orbit" aria-hidden="true"><i></i></span><strong>AETHER</strong><span>Computational Visual Laboratory</span></a>
+    <nav id="primary-navigation" aria-label="Primary navigation"><button class="active" type="button">Gallery</button><button id="laboratory-toggle" type="button">Laboratory</button><a href="./tutorial/">Tutorial</a><button id="about-toggle" type="button">About</button></nav>
+    <div class="header-actions"><button id="nav-toggle" class="icon-button nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-navigation" aria-expanded="false">☰</button><button id="focus-search" class="icon-button" type="button" aria-label="Search studies">⌕</button><div class="catalogue-pill"><span></span><em>Animations</em><b id="catalogue-count">80</b></div></div>
+  </header>
+  <div class="laboratory-layout">
+    <aside class="catalogue-panel glass-panel" aria-label="Animation gallery">
+      <div class="section-heading"><div><p>COLLECTION</p><h1>Animation Gallery</h1></div><button id="gallery-toggle" type="button" aria-expanded="true" aria-controls="gallery-grid" aria-label="Toggle gallery">−</button></div>
+      <p class="subtle">Interactive studies in motion, matter and form.</p>
+      <label class="gallery-search"><span aria-hidden="true">⌕</span><input id="gallery-search" type="search" placeholder="Search the laboratory" autocomplete="off" /></label>
+      <div id="category-filters" class="category-filters" aria-label="Filter studies"><button class="active" data-filter="all">All</button><button data-filter="astro">Astrophysics</button><button data-filter="math">Mathematics</button><button data-filter="particle">Particles</button></div>
+      <div id="gallery-grid" class="gallery-grid"></div>
+    </aside>
+    <section class="viewer-column">
+      <div id="viewer" class="viewer glass-panel">
+        <canvas id="stage" aria-label="Interactive computational animation">Your browser cannot display the interactive WebGL study.</canvas>
+        <div class="viewer-topline"><span class="live-badge"><i></i> LIVE</span><span class="render-badge">WEBGL · REAL TIME</span></div>
+        <div class="interaction-hints"><span><b>◉</b> Drag to rotate</span><span><b>↕</b> Scroll to zoom</span><span><b>⊙</b> Double-click to focus</span></div>
+        <div class="viewer-actions" aria-label="Animation controls"><button id="start" class="primary-control" type="button" aria-label="Play">▶</button><button id="mute" type="button" aria-pressed="false"><span>◖</span><em>Mute</em></button><button id="reset-camera" type="button"><span>◎</span><em>Reset</em></button><button id="fullscreen" type="button"><span>⛶</span><em>Fullscreen</em></button><button id="screenshot" type="button"><span>◫</span><em>Capture</em></button></div>
+        <div id="system-message" class="system-message" role="status" aria-live="polite" hidden></div>
+      </div>
+      <div class="filmstrip-row"><button id="prev" type="button" aria-label="Previous animation">‹</button><div id="filmstrip" class="filmstrip"></div><button id="next" type="button" aria-label="Next animation">›</button></div>
+      <article class="study-info glass-panel"><div class="study-copy"><p id="study-class" class="eyebrow">COMPUTATIONAL STUDY</p><div class="study-title-row"><h2 id="animation-title" aria-live="polite">AETHER</h2><span id="study-state">VISUAL STUDY</span></div><div id="study-tags" class="study-tags"></div><p id="study-description">Select a visual study from the gallery.</p></div><dl class="study-specs"><div><dt>Engine</dt><dd>Three.js</dd></div><div><dt>Renderer</dt><dd>WebGL 2</dd></div><div><dt>Collection</dt><dd id="study-index">01 / 80</dd></div><div><dt>Audio</dt><dd>Reactive</dd></div></dl></article>
+      <article id="research-panel" class="research-panel glass-panel" hidden><div class="research-heading"><div><p class="eyebrow">MODEL NOTES</p><h3>Scientific context</h3></div><span>ASSUMPTIONS VISIBLE</span></div><div class="research-grid"><div><small>METHOD</small><strong id="study-model-detail">—</strong></div><div><small>UNITS</small><strong id="study-units">—</strong></div><div class="research-caveat"><small>LIMITATION</small><p id="study-caveat">—</p></div></div><div id="study-references" class="study-references"></div></article>
+    </section>
+    <aside class="control-panel glass-panel" aria-label="Visual controls">
+      <div class="section-heading"><div><p>LIVE SETTINGS</p><h2>Visual Controls</h2></div><span class="control-signal"></span></div>
+      <label class="range-control"><span>Motion speed</span><output id="speed-output">1.00×</output><input id="visual-speed" type="range" min="0" max="0.3" step="0.005" value="0.08" /></label>
+      <label class="range-control"><span>Structure scale</span><output id="scale-output">1.00×</output><input id="visual-scale" type="range" min="0.4" max="1.8" step="0.05" value="1" /></label>
+      <label class="range-control"><span>Bloom intensity</span><output id="glow-output">1.00×</output><input id="visual-glow" type="range" min="0.3" max="1.8" step="0.05" value="1" /></label>
+      <label class="colour-control"><span>Colour atmosphere</span><input id="visual-colour" type="color" value="#45dfff" /></label><div class="palette-row"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="audio-meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <button id="reset-visuals" class="wide-button" type="button">↻ Reset visual controls</button>
+      <section id="admin-audio" class="admin-audio"><div class="audio-heading"><div><p>AETHER AUDIO</p><h3>Browser soundtrack</h3></div><span>LOCAL</span></div><div class="now-playing"><span class="album-orbit"></span><div><small>NOW PLAYING</small><strong id="audio-name">Vastness — Andrew Ev · 1/7</strong></div></div><label class="range-control compact"><span>Volume</span><output id="volume-output">70%</output><input id="audio-volume" type="range" min="0" max="1" step="0.05" value="0.7" /></label><label class="upload-button">＋ Add music from this device<input id="audio-upload" type="file" accept="audio/*" multiple /></label><label class="shuffle-option"><input id="audio-shuffle" type="checkbox" checked /> Change track with each study</label><small>Uploads stay in this browser session and are never sent anywhere.</small></section>
+      <section class="simulation-console" aria-label="Simulation console"><div class="console-heading"><div><p>SYSTEM</p><h3>Simulation Console</h3></div><span id="console-status">LIVE</span></div><pre id="runtime-console">AETHER runtime ready.</pre><button id="source-console-toggle" type="button" hidden>Open local source</button><pre id="source-console" hidden></pre><small id="source-lock">Public source display locked · runtime telemetry only</small></section>
+    </aside>
+  </div>
+  <footer><span class="footer-line"></span><div class="footer-core"><strong>AETHER</strong><small>Computational Visual Laboratory</small><div class="observatory-time"><b id="observatory-clock">--:--:--</b><span id="observatory-date">Synchronising observatory clock</span><i>LOCAL SYSTEM · LIVE</i></div><span>Created and curated by Biswajit Jana · © 2026</span><nav class="footer-social" aria-label="Biswajit Jana online"><a href="https://github.com/Biswajit1999" target="_blank" rel="me noreferrer" aria-label="Biswajit Jana on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.4 23c.6.1.8-.2.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.7 0c2.2-1.5 3.1-1.2 3.1-1.2.6 1.5.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.8 5.4-5.5 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 12 .7Z"/></svg><span>GitHub</span></a><a href="https://uk.linkedin.com/in/biswajit-jana-27011a151" target="_blank" rel="me noreferrer" aria-label="Biswajit Jana on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 7.8H1.1V21h4.2V7.8ZM3.2 1.2A2.4 2.4 0 1 0 3.2 6a2.4 2.4 0 0 0 0-4.8ZM21 13.4c0-4-2.1-5.9-5-5.9-2.3 0-3.4 1.3-4 2.2V7.8H7.9V21H12v-6.5c0-1.7.3-3.4 2.5-3.4s2.2 2 2.2 3.5V21H21v-7.6Z"/></svg><span>LinkedIn</span></a></nav></div><span class="footer-line"></span></footer>
+  <dialog id="about-dialog"><button id="about-close" aria-label="Close">×</button><p class="eyebrow">ABOUT AETHER</p><h2>A place for learning through motion.</h2><p>AETHER is Biswajit Jana’s evolving computational visual laboratory: a personal space for studying mathematics, physics, sound, code and the structures that emerge between them.</p><p>Every work is presented as what it is—scientific model, mathematical construction, or visual experiment—with its assumptions made visible.</p></dialog>
+  <dialog id="laboratory-dialog"><button id="laboratory-close" aria-label="Close">×</button><p class="eyebrow">LABORATORY METHOD</p><h2>Observe. Model. Test. Refine.</h2><div class="method-grid"><span>01<small>Research</small></span><span>02<small>Model</small></span><span>03<small>Validate</small></span><span>04<small>Render</small></span></div><p>The catalogue is being reviewed study by study. Physical claims are tied to explicit models and references; speculative works are identified as visual interpretations.</p></dialog>
+  <audio id="track" preload="metadata"></audio><noscript>This experience requires JavaScript.</noscript>
+</main><script type="module" src="./src/main.js"></script></body></html>

@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-10-recursive-sphere-fractal",
+  "slug": "recursive-sphere-fractal",
+  "seed": "aether:2026-08-10:a106-recursive-sphere-fractal",
+  "title": "Recursive Sphere Fractal",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "self-similar-sphere-of-spheres-fractal",
+    "dynamics": "recursive-generation-subdivision",
+    "sampling": "fibonacci-sphere-per-node-surface-sampling",
+    "shader": "generation-gradient-soft-circle",
+    "audio": "bass-per-point-pulse-mid-global-spin-high-point-size",
+    "camera": "lissajous-figure-eight-sway",
+    "temporalArc": "continuous-gentle-drift",
+    "interaction": "none"
+  },
+  "mobileStrategy": "generations 4->3 and pointsPerSphere 220->100 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "fractal",
+    "recursive",
+    "spheres"
+  ]
+}

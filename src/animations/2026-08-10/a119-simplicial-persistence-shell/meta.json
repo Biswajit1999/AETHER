@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-23-simplicial-persistence-shell",
+  "slug": "simplicial-persistence-shell",
+  "seed": "aether:2026-08-10:a119-simplicial-persistence-shell",
+  "title": "Simplicial Persistence Shell",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "spherical-point-cloud-nearest-neighbour-shell",
+    "dynamics": "growing-epsilon-vietoris-rips-filtration",
+    "sampling": "seeded-random-sphere-precomputed-nn-distance",
+    "shader": "filtration-birth-threshold-glow",
+    "audio": "bass-epsilon-amplitude-mid-sweep-speed-high-point-size",
+    "camera": "static-frame-object-y-rotation",
+    "temporalArc": "repeating-filtration-sweep",
+    "interaction": "none"
+  },
+  "mobileStrategy": "particleCount 3200->1400 on coarse-pointer devices",
+  "duration": 22,
+  "tags": [
+    "topological-data-analysis",
+    "persistence",
+    "filtration"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-12-membrane-collision-brane",
+  "slug": "membrane-collision-brane",
+  "seed": "aether:2026-08-10:a108-membrane-collision-brane",
+  "title": "Membrane Collision",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "SPECULATIVE_ARTISTIC",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "twin-undulating-membrane-sheets",
+    "dynamics": "membrane-interpenetration-oscillation",
+    "sampling": "uniform-grid-dual-sheet",
+    "shader": "sheet-blend-ripple-tint",
+    "audio": "bass-approach-amplitude-mid-ripple-frequency-high-point-size",
+    "camera": "fixed-elevated-three-quarter-view",
+    "temporalArc": "continuous-approach-passthrough-cycle",
+    "interaction": "none"
+  },
+  "mobileStrategy": "gridSize 70->46 per axis on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "brane",
+    "membrane",
+    "speculative-cosmology"
+  ]
+}

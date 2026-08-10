@@ -1,0 +1,32 @@
+{
+  "id": "2026-08-10-human-02-lorenz-attractor-trails",
+  "slug": "lorenz-attractor-trails",
+  "seed": "aether:2026-08-10:a003-lorenz-attractor-trails",
+  "title": "Lorenz Attractor Trails",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "strange-attractor-point-cloud",
+    "dynamics": "lorenz-coupled-multi-strand-trajectory",
+    "sampling": "seeded-rk-euler-integrated-trail",
+    "shader": "travelling-glow-window-ember-palette",
+    "audio": "bass-trail-thickness-mid-flow-speed-high-sparkle",
+    "camera": "lateral-parallax-sway",
+    "temporalArc": "continuous-flow-loop",
+    "interaction": "none"
+  },
+  "mobileStrategy": "strandCount 6->3 and pointsPerStrand 7000->2600 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "lorenz",
+    "chaos",
+    "attractor",
+    "trails"
+  ]
+}

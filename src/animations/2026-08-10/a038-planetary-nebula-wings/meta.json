@@ -1,0 +1,31 @@
+{
+  "id": "2026-08-10-human-038-planetary-nebula-wings",
+  "slug": "planetary-nebula-wings",
+  "seed": "aether:2026-08-10:a038-planetary-nebula-wings",
+  "title": "Planetary Nebula Wings",
+  "provider": "human",
+  "providerModel": "n/a",
+  "classification": "MATHEMATICALLY_INSPIRED",
+  "audioControls": [
+    "bass",
+    "mid",
+    "high"
+  ],
+  "fingerprint": {
+    "topology": "bipolar-nebular-lobes",
+    "dynamics": "photoionised-lobe-expansion",
+    "sampling": "seeded-stratified-astrophysical-particles",
+    "shader": "additive-bichromatic-radiance-field",
+    "audio": "bass-compression-mid-orbit-high-radiance",
+    "camera": "slow-observatory-orbit",
+    "temporalArc": "continuous-event-cycle",
+    "interaction": "interactive-gallery"
+  },
+  "mobileStrategy": "particle count reduced from 48000 to 18000 on coarse-pointer devices",
+  "duration": 20,
+  "tags": [
+    "astrophysics",
+    "bipolar-nebular-lobes",
+    "audio-reactive"
+  ]
+}

@@ -1,0 +1,46 @@
+.physics-readout {
+  position: absolute;
+  z-index: 4;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 4px 14px;
+  max-width: min(620px, 65%);
+  padding: 9px 12px;
+  border: 1px solid rgba(91, 218, 255, 0.28);
+  border-radius: 9px;
+  background: rgba(2, 7, 18, 0.76);
+  backdrop-filter: blur(10px);
+  color: #b9c8df;
+  font: 600 9px/1.35 ui-monospace, SFMono-Regular, Consolas, monospace;
+  pointer-events: none;
+}
+
+.physics-readout strong {
+  grid-column: 1 / -1;
+  color: #56e0ff;
+  letter-spacing: 0.12em;
+}
+
+.physics-readout span {
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .physics-readout {
+    top: 48px;
+    right: 8px;
+    grid-template-columns: 1fr;
+    max-width: 72%;
+    padding: 7px 9px;
+  }
+
+  .physics-readout strong {
+    grid-column: auto;
+  }
+
+  .physics-readout span:nth-last-child(-n + 2) {
+    display: none;
+  }
+}
