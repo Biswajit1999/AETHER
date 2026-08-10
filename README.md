@@ -60,7 +60,7 @@ The generated [Study Atlas](./STUDY_ATLAS.md) audits the complete catalogue. It 
 
 ## Learn Three.js with AETHER
 
-The [AETHER Field Guide to Three.js](https://biswajit1999.github.io/AETHER/tutorial/) is a free ten-chapter path from the first scene to production-ready particle and shader work. It covers the rendering loop, project structure, geometry, cameras, motion, interaction, GPU particles, GLSL, audio response, performance, testing and a complete equation-driven capstone study.
+The [AETHER Field Guide to Three.js](https://biswajit1999.github.io/AETHER/tutorial/) is a free twelve-chapter path from the first scene to production-ready particle, shader and next-generation GPU work. It covers the rendering loop, project structure, geometry, cameras, motion, interaction, GPU particles, GLSL, audio response, post-processing pipelines, WebGPU and the Three Shading Language (TSL), performance, testing and a complete equation-driven capstone study.
 
 The guide is written as a practical companion to the laboratory and is created and curated by Biswajit Jana.
 

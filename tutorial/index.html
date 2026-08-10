@@ -1,17 +1,24 @@
 <!doctype html>
-<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AETHER Field Guide to Three.js — Biswajit Jana</title><meta name="description" content="A ten-chapter practical Three.js field guide created and curated by Biswajit Jana."><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./additions.css"></head>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AETHER Field Guide to Three.js — Biswajit Jana</title><meta name="description" content="A twelve-chapter practical Three.js field guide created and curated by Biswajit Jana."><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./additions.css"></head>
 <body><div class="progress" id="progress"></div><header><a href="../" class="brand"><b>AETHER</b><span>Computational Visual Laboratory</span></a><nav><a href="#contents">Chapters</a><a href="#project">Final project</a><a href="#references">References</a><a href="../">Laboratory ↗</a></nav></header>
 <main>
-<section class="hero"><p class="kicker">AETHER FIELD GUIDE · EDITION 01</p><h1>Three.js from first pixel<br>to living system.</h1><p class="lead">A practical, ten-chapter route into real-time 3D on the web: scenes, geometry, light, motion, interaction, particles, shaders, sound and production discipline.</p><div class="credit">Created and curated by <strong>Biswajit Jana</strong><span>10 chapters · practical examples · one complete study</span></div></section>
-<section id="contents" class="contents"><div><p class="kicker">FLIGHT PLAN</p><h2>Ten chapters, one mental model</h2></div><ol><li><a href="#c1"><b>01</b>The rendering loop</a></li><li><a href="#c2"><b>02</b>Project foundation</a></li><li><a href="#c3"><b>03</b>Geometry and meshes</a></li><li><a href="#c4"><b>04</b>Light and cameras</a></li><li><a href="#c5"><b>05</b>Time and animation</a></li><li><a href="#c6"><b>06</b>Interaction</a></li><li><a href="#c7"><b>07</b>Particle systems</a></li><li><a href="#c8"><b>08</b>GLSL shaders</a></li><li><a href="#c9"><b>09</b>Audio response</a></li><li><a href="#c10"><b>10</b>Production</a></li></ol></section>
-<article id="c1"><header><span>CHAPTER 01</span><h2>The rendering loop</h2><p>Understand the four objects behind nearly every Three.js experience.</p></header><div class="chapter-grid"><div><h3>The mental model</h3><p>Three.js is a JavaScript 3D library over browser graphics APIs. A <code>Scene</code> is the root of a tree; a <code>Camera</code> defines the view; a <code>WebGLRenderer</code> turns the visible scene into pixels; and a render loop repeats that work as state changes.</p><p>A mesh combines geometry (data), material (appearance), and a transform (position, rotation and scale). Keeping those responsibilities separate makes complex scenes manageable.</p><aside><b>Coordinate compass</b> Three.js uses a right-handed coordinate system. Cameras look down their local negative Z axis; Y is normally up.</aside></div><pre><code>import * as THREE from 'three';
+<section class="hero"><p class="kicker">AETHER FIELD GUIDE · EDITION 02</p><h1>Three.js from first pixel<br>to living system.</h1><p class="lead">A practical, twelve-chapter route into real-time 3D on the web: scenes, geometry, light, motion, interaction, particles, shaders, sound, post-processing, next-generation GPU pipelines, and production discipline.</p><div class="credit">Created and curated by <strong>Biswajit Jana</strong><span>12 chapters · worked examples · one complete capstone study</span></div></section>
+<section id="contents" class="contents"><div><p class="kicker">FLIGHT PLAN</p><h2>Twelve chapters, one mental model</h2></div><ol><li><a href="#c1"><b>01</b>The rendering loop</a></li><li><a href="#c2"><b>02</b>Project foundation</a></li><li><a href="#c3"><b>03</b>Geometry and meshes</a></li><li><a href="#c4"><b>04</b>Light and cameras</a></li><li><a href="#c5"><b>05</b>Time and animation</a></li><li><a href="#c6"><b>06</b>Interaction</a></li><li><a href="#c7"><b>07</b>Particle systems</a></li><li><a href="#c8"><b>08</b>GLSL shaders</a></li><li><a href="#c9"><b>09</b>Audio response</a></li><li><a href="#c10"><b>10</b>Post-processing</a></li><li><a href="#c11"><b>11</b>WebGPU and TSL</a></li><li><a href="#c12"><b>12</b>Production</a></li></ol></section>
+
+<article id="c1"><header><span>CHAPTER 01</span><h2>The rendering loop</h2><p>Understand the four objects behind nearly every Three.js experience, and why the pipeline is a loop rather than a single draw call.</p></header><div class="chapter-grid"><div><h3>The mental model</h3><p>Three.js is a JavaScript 3D library over browser graphics APIs (WebGL2, and increasingly WebGPU). A <code>Scene</code> is the root of a tree; a <code>Camera</code> defines the view; a <code>WebGLRenderer</code> turns the visible scene into pixels; and a render loop repeats that work as state changes.</p><p>A mesh combines geometry (data), material (appearance), and a transform (position, rotation and scale). Keeping those responsibilities separate makes complex scenes manageable: you can swap a material without touching geometry, or reuse geometry across a thousand transforms.</p><p>Under the hood, each frame the renderer walks the scene graph, computes world matrices from local transforms, culls what the camera frustum cannot see, sorts opaque geometry front-to-back and transparent geometry back-to-front, and issues draw calls. Understanding this ordering explains why transparency artifacts appear when draw order is wrong, and why draw-call count — not triangle count alone — is often the real performance ceiling.</p><aside><b>Coordinate compass</b> Three.js uses a right-handed coordinate system. Cameras look down their local negative Z axis; Y is normally up. World space, local (object) space and camera (view) space are three different frames — most bugs in early scenes come from confusing them.</aside></div><pre><code>import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, 1, .1, 100);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 camera.position.z = 3;
-renderer.render(scene, camera);</code></pre></div><footer><b>Checkpoint</b><span>Explain why a camera can move without changing any mesh coordinates.</span></footer></article>
-<article id="c2"><header><span>CHAPTER 02</span><h2>Project foundation</h2><p>Build a reproducible ES-module project with Vite.</p></header><div class="chapter-grid"><div><h3>Start cleanly</h3><p>Vite serves modules during development and produces optimised static assets for deployment. Keep <code>node_modules</code> out of version control; keep both package files so the dependency graph can be reproduced.</p><p>Use one entry module and grow into small modules for scene creation, simulation, input, audio and lifecycle. Assets that retain their filenames belong in <code>public/</code>.</p><aside><b>Common failure</b> Opening HTML directly with a file URL breaks module and asset rules. Use the development server.</aside></div><pre><code>npm create vite@latest aether-study -- --template vanilla
+renderer.render(scene, camera);
+
+// Inspecting the pipeline cost
+console.log(renderer.info.render.calls);   // draw calls this frame
+console.log(renderer.info.render.triangles);
+console.log(renderer.info.memory.geometries);</code></pre></div><footer><b>Checkpoint</b><span>Explain why a camera can move without changing any mesh coordinates, and why draw-call count matters more than triangle count on mobile GPUs.</span></footer></article>
+
+<article id="c2"><header><span>CHAPTER 02</span><h2>Project foundation</h2><p>Build a reproducible ES-module project with Vite, and structure it so it survives growth.</p></header><div class="chapter-grid"><div><h3>Start cleanly</h3><p>Vite serves modules during development and produces optimised static assets for deployment. Keep <code>node_modules</code> out of version control; keep both package files (<code>package.json</code> and the lockfile) so the dependency graph can be reproduced exactly on another machine.</p><p>Use one entry module and grow into small modules for scene creation, simulation, input, audio and lifecycle. Assets that must keep their exact filenames belong in <code>public/</code>; assets that get bundled and hashed belong alongside source.</p><p>A study-based project (like this laboratory) benefits from a consistent per-study contract: an <code>animation.js</code> exporting <code>init(canvas)</code>/<code>dispose()</code>, a metadata file describing title and parameters, and a thumbnail generated from the same code path as the live scene — never a hand-drawn approximation.</p><aside><b>Common failure</b> Opening HTML directly with a <code>file://</code> URL breaks ES module imports and relative asset loading. Always use the development server, even for a "quick look".</aside></div><pre><code>npm create vite@latest aether-study -- --template vanilla
 cd aether-study
 npm install
 npm install three
@@ -19,8 +26,13 @@ npm run dev
 
 import * as THREE from 'three';
 import { OrbitControls } from
-  'three/addons/controls/OrbitControls.js';</code></pre></div><footer><b>Exercise</b><span>Create a canvas that fills its parent rather than the entire browser window.</span></footer></article>
-<article id="c3"><header><span>CHAPTER 03</span><h2>Geometry, attributes and meshes</h2><p>Move from primitives to data you control.</p></header><div class="chapter-grid"><div><h3>Vertices are structured data</h3><p><code>BufferGeometry</code> stores named attributes. Positions use three floats per vertex; normals influence lighting; UVs address textures; custom attributes can carry age, mass, phase or colour into a shader.</p><p>Reuse geometry and materials. For many copies of one form, use <code>InstancedMesh</code>. Dispose GPU resources when a study is removed.</p><aside><b>Rule of scale</b> Decide what one scene unit means. Consistent scale makes cameras, motion and lighting easier to reason about.</aside></div><pre><code>const count = 10_000;
+  'three/addons/controls/OrbitControls.js';
+
+// suggested per-study contract
+export function init(canvas, opts = {}) { /* build scene */ }
+export function dispose() { /* free GPU resources */ }</code></pre></div><footer><b>Exercise</b><span>Create a canvas that fills its parent container rather than the entire browser window, and confirm it survives a container resize.</span></footer></article>
+
+<article id="c3"><header><span>CHAPTER 03</span><h2>Geometry, attributes and meshes</h2><p>Move from primitives to data you control.</p></header><div class="chapter-grid"><div><h3>Vertices are structured data</h3><p><code>BufferGeometry</code> stores named attributes. Positions use three floats per vertex; normals influence lighting; UVs address textures; custom attributes can carry age, mass, phase or colour into a shader.</p><p>Reuse geometry and materials wherever possible — creating them per frame is a common performance mistake. For many copies of one form, use <code>InstancedMesh</code> with a per-instance matrix or colour attribute instead of thousands of separate mesh objects. Dispose GPU resources (geometry, material, textures) when a study is removed, or memory grows every time the user switches scenes.</p><p>Index buffers matter too: an indexed geometry reuses shared vertices between adjacent triangles, roughly halving vertex-shader work for closed surfaces like spheres or terrain grids.</p><aside><b>Rule of scale</b> Decide what one scene unit means (a metre, an AU, a light-year) before building. Consistent scale makes cameras, motion, lighting and physical formulas easier to reason about together.</aside></div><pre><code>const count = 10_000;
 const positions = new Float32Array(count * 3);
 for (let i = 0; i &lt; count; i++) {
   positions[i*3] = (Math.random()-.5)*4;
@@ -29,14 +41,28 @@ for (let i = 0; i &lt; count; i++) {
 }
 const geometry = new THREE.BufferGeometry();
 geometry.setAttribute('position',
-  new THREE.BufferAttribute(positions, 3));</code></pre></div><footer><b>Checkpoint</b><span>Confirm <code>geometry.attributes.position.count</code> equals the particle count.</span></footer></article>
-<article id="c4"><header><span>CHAPTER 04</span><h2>Cameras, light and colour</h2><p>Make depth readable instead of merely present.</p></header><div class="chapter-grid"><div><h3>Compose the view</h3><p>A perspective camera needs field of view, aspect, near and far clipping planes. Huge far/near ratios reduce depth precision. Update aspect and projection whenever the canvas size changes.</p><p>Lit materials need lights; <code>MeshBasicMaterial</code> does not. Begin with one key light and restrained ambient fill. Choose output colour space and tone mapping deliberately.</p><aside><b>Visual diagnosis</b> If rotation reveals a paper-thin object, the geometry is flat. Lighting cannot invent missing depth.</aside></div><pre><code>const camera = new THREE.PerspectiveCamera(50,1,.1,100);
+  new THREE.BufferAttribute(positions, 3));
+
+// instancing 5000 identical rocks cheaply
+const mesh = new THREE.InstancedMesh(rockGeo, rockMat, 5000);
+const m = new THREE.Matrix4();
+for (let i = 0; i &lt; 5000; i++) {
+  m.compose(randomPos(), randomQuat(), randomScale());
+  mesh.setMatrixAt(i, m);
+}
+mesh.instanceMatrix.needsUpdate = true;</code></pre></div><footer><b>Checkpoint</b><span>Confirm <code>geometry.attributes.position.count</code> equals the particle count, and compare draw calls before/after switching to <code>InstancedMesh</code>.</span></footer></article>
+
+<article id="c4"><header><span>CHAPTER 04</span><h2>Cameras, light and colour</h2><p>Make depth readable instead of merely present.</p></header><div class="chapter-grid"><div><h3>Compose the view</h3><p>A perspective camera needs field of view, aspect, near and far clipping planes. Huge far/near ratios reduce depth-buffer precision and cause z-fighting; keep the ratio as small as the scene allows. Update aspect and projection whenever the canvas size changes, or the image will distort on resize.</p><p>Lit materials need lights; <code>MeshBasicMaterial</code> does not respond to any of them. Begin with one key light and a restrained ambient or hemisphere fill — this single-key-plus-fill pattern is the fastest way to make an otherwise flat render read as three-dimensional. Choose output colour space and tone mapping deliberately: physically based materials expect linear-space lighting and a filmic tone-map on output, not the raw renderer default.</p><p>Fog (<code>THREE.Fog</code> or <code>FogExp2</code>) is an inexpensive way to hide far-plane popping and add atmospheric depth cues, especially useful in particle-heavy space scenes.</p><aside><b>Visual diagnosis</b> If rotation reveals a paper-thin object, the geometry is flat. Lighting cannot invent missing depth — check the geometry before touching the material.</aside></div><pre><code>const camera = new THREE.PerspectiveCamera(50,1,.1,100);
 scene.add(new THREE.HemisphereLight(0x8fcfff,0x08030f,1));
 const key = new THREE.DirectionalLight(0xffffff,3);
 key.position.set(3,4,2); scene.add(key);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;</code></pre></div><footer><b>Exercise</b><span>Compare normal, standard and basic materials on one sphere.</span></footer></article>
-<article id="c5"><header><span>CHAPTER 05</span><h2>Time, animation and simulation</h2><p>Separate elapsed time, frame time and model time.</p></header><div class="chapter-grid"><div><h3>Frames are not seconds</h3><p><code>requestAnimationFrame</code> is not a guaranteed interval. Use delta for speed-independent visual motion. For sensitive models, accumulate real time and advance with a fixed step so frame rate does not change the physics.</p><p>Seeded randomness plus a fixed initial state makes a visual, thumbnail and test reproducible.</p><aside><b>Numerical honesty</b> State the integrator, step size, units, assumptions and limits.</aside></div><pre><code>let previous=performance.now(),accumulator=0;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+
+scene.fog = new THREE.FogExp2(0x05030a, 0.045);</code></pre></div><footer><b>Exercise</b><span>Compare normal, standard and basic materials on one sphere under the same lights, and note which ones ignore the lights entirely.</span></footer></article>
+
+<article id="c5"><header><span>CHAPTER 05</span><h2>Time, animation and simulation</h2><p>Separate elapsed time, frame time and model time.</p></header><div class="chapter-grid"><div><h3>Frames are not seconds</h3><p><code>requestAnimationFrame</code> is not a guaranteed interval — it varies with display refresh rate, tab visibility and device load. Use delta time for speed-independent visual motion. For sensitive numerical models, accumulate real time and advance with a fixed step so frame rate does not change the physics — the classic fixed-step-with-accumulator pattern below decouples simulation correctness from rendering speed.</p><p>Seeded randomness plus a fixed initial state makes a visual, a thumbnail and a test reproducible — essential when a study needs to be re-verified later or ported into a paper figure.</p><p>For orbital or oscillatory systems, prefer a symplectic or RK4 integrator over naive Euler stepping; Euler visibly drifts energy over long runs, which shows up as an orbit that slowly spirals when physically it should be closed.</p><aside><b>Numerical honesty</b> State the integrator, step size, units, assumptions and limits directly in the study's metadata or README — a beautiful animation that silently misrepresents its underlying model is a documentation bug, not a visual success.</aside></div><pre><code>let previous=performance.now(),accumulator=0;
 const step=1/120;
 function frame(now){
   const delta=Math.min((now-previous)/1000,.1);
@@ -45,8 +71,14 @@ function frame(now){
   renderer.render(scene,camera);
   requestAnimationFrame(frame);
 }
-requestAnimationFrame(frame);</code></pre></div><footer><b>Checkpoint</b><span>Throttle the browser and confirm the model does not accelerate.</span></footer></article>
-<article id="c6"><header><span>CHAPTER 06</span><h2>Interaction and spatial input</h2><p>Connect pointer gestures to camera and scene.</p></header><div class="chapter-grid"><div><h3>Two kinds of control</h3><p><code>OrbitControls</code> supplies orbit, dolly and pan around a target. Enable damping and call <code>update()</code> each frame. <code>Raycaster</code> turns normalised pointer coordinates into a selection ray.</p><p>Keep input separate from model state. Add keyboard access, visible focus, reduced-motion support and reset.</p><aside><b>Touch detail</b> Test coarse pointers. Hover does not exist on a touchscreen.</aside></div><pre><code>const controls=new OrbitControls(camera,renderer.domElement);
+requestAnimationFrame(frame);
+
+// visibility-aware pause (saves battery, avoids delta spikes)
+document.addEventListener('visibilitychange', () =&gt; {
+  if (document.hidden) previous = performance.now();
+});</code></pre></div><footer><b>Checkpoint</b><span>Throttle the browser's CPU (DevTools performance panel) and confirm the model does not accelerate or decelerate its physical behaviour.</span></footer></article>
+
+<article id="c6"><header><span>CHAPTER 06</span><h2>Interaction and spatial input</h2><p>Connect pointer, touch and keyboard gestures to camera and scene state.</p></header><div class="chapter-grid"><div><h3>Two kinds of control</h3><p><code>OrbitControls</code> supplies orbit, dolly and pan around a target. Enable damping and call <code>update()</code> each frame — without the per-frame update call, damping silently does nothing. <code>Raycaster</code> turns normalised pointer coordinates into a ray you can intersect against scene objects for picking and hover states.</p><p>Keep input separate from model state: a control layer should only ever write into a small, well-defined interface (target position, selected object, drag delta), never reach directly into simulation internals. This separation is what makes a study testable without a browser.</p><p>Add keyboard access (tab order, enter/space activation), visible focus rings, a <code>prefers-reduced-motion</code> check that disables camera auto-rotation, and a "reset view" affordance — these are accessibility requirements, not polish.</p><aside><b>Touch detail</b> Test coarse pointers explicitly. Hover does not exist on a touchscreen, so any interaction that depends only on <code>pointermove</code> without a tap fallback is unreachable on mobile.</aside></div><pre><code>const controls=new OrbitControls(camera,renderer.domElement);
 controls.enableDamping=true;
 const pointer=new THREE.Vector2(),raycaster=new THREE.Raycaster();
 canvas.addEventListener('pointermove',e=&gt;{
@@ -54,15 +86,28 @@ canvas.addEventListener('pointermove',e=&gt;{
   pointer.set((e.clientX-r.left)/r.width*2-1,
     -(e.clientY-r.top)/r.height*2+1);
   raycaster.setFromCamera(pointer,camera);
-});</code></pre></div><footer><b>Exercise</b><span>Highlight the nearest selected mesh, then restore it.</span></footer></article>
-<article id="c7"><header><span>CHAPTER 07</span><h2>Particle systems</h2><p>Represent structure with points, not thousands of meshes.</p></header><div class="chapter-grid"><div><h3>Design the distribution first</h3><p>A particle system is usually one <code>THREE.Points</code> backed by <code>BufferGeometry</code>. Meaning comes from the sampler: a sphere needs volume sampling; a galaxy needs radial density, arms and thickness; a fountain needs velocity under acceleration.</p><p>Put static properties in attributes and dynamic controls in uniforms. Updating one uniform is cheaper than rewriting every particle.</p><aside><b>Thumbnail fidelity</b> Generate previews from the same sampler or equation as the full scene.</aside></div><pre><code>const material=new THREE.PointsMaterial({
+});
+
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+controls.autoRotate = !reduceMotion;</code></pre></div><footer><b>Exercise</b><span>Highlight the nearest raycast-selected mesh on hover, then restore its original material when the pointer leaves — verify it also works with keyboard focus.</span></footer></article>
+
+<article id="c7"><header><span>CHAPTER 07</span><h2>Particle systems</h2><p>Represent structure with points, not thousands of individual meshes.</p></header><div class="chapter-grid"><div><h3>Design the distribution first</h3><p>A particle system is usually one <code>THREE.Points</code> object backed by <code>BufferGeometry</code>. Meaning comes from the sampler, not the renderer: a sphere needs volume or surface sampling; a galaxy needs radial density, logarithmic spiral arms and vertical thickness; a fountain needs velocity under acceleration and a lifetime that resets.</p><p>Put static properties (birth position, base colour, random seed) in attributes and dynamic controls (time, global speed, colour shift) in uniforms. Updating one uniform is far cheaper per frame than rewriting every particle's attribute buffer on the CPU.</p><p>For genuinely large counts (100k+), move the update itself onto the GPU: encode position/velocity in a floating-point texture and step it with a render-to-texture ping-pong pass, or use <code>GPUComputationRenderer</code>. CPU-side loops over large typed arrays become the bottleneck well before the GPU does.</p><aside><b>Thumbnail fidelity</b> Generate preview thumbnails from the same sampler or equation as the full scene — a static image built by a different code path silently drifts out of sync as the simulation evolves.</aside></div><pre><code>const material=new THREE.PointsMaterial({
   color:0x55ddff,size:.025,transparent:true,
   depthWrite:false,blending:THREE.AdditiveBlending
 });
 const cloud=new THREE.Points(geometry,material);
 scene.add(cloud);
-geometry.attributes.position.needsUpdate=true;</code></pre></div><footer><b>Checkpoint</b><span>Change a uniform random radius into a density distribution.</span></footer></article>
-<article id="c8"><header><span>CHAPTER 08</span><h2>GLSL shaders and uniforms</h2><p>Move repeated visual computation onto the GPU.</p></header><div class="chapter-grid"><div><h3>One program, many vertices</h3><p>A vertex shader transforms every vertex. A fragment shader colours fragments. Attributes vary per vertex; uniforms are shared; varyings carry interpolated data between stages.</p><p>Begin with the default transform and add one deformation at a time. Keep shader text readable and enable shader checks during development.</p><aside><b>Point sprites</b> <code>gl_PointCoord</code> runs from zero to one across each point square.</aside></div><pre><code>// vertex shader
+geometry.attributes.position.needsUpdate=true;
+
+// galaxy-arm sampler sketch
+function galaxyPoint(i, n, arms=3, twist=4){
+  const r = Math.pow(Math.random(), 0.6) * 4;
+  const arm = i % arms;
+  const theta = r*twist + arm*(2*Math.PI/arms) + (Math.random()-.5)*0.3;
+  return [r*Math.cos(theta), (Math.random()-.5)*0.15*(1-r/4), r*Math.sin(theta)];
+}</code></pre></div><footer><b>Checkpoint</b><span>Change a uniform-random radius into a physically motivated density distribution, and explain in one sentence why the visual difference matters scientifically.</span></footer></article>
+
+<article id="c8"><header><span>CHAPTER 08</span><h2>GLSL shaders and uniforms</h2><p>Move repeated visual computation onto the GPU, where it runs once per vertex or fragment in parallel.</p></header><div class="chapter-grid"><div><h3>One program, many vertices</h3><p>A vertex shader transforms every vertex; a fragment shader colours every fragment (roughly, every pixel a triangle covers). Attributes vary per vertex; uniforms are shared across the whole draw call; varyings carry interpolated data from the vertex stage into the fragment stage.</p><p>Begin from the default transform and add one deformation at a time, checking the result after each change — shader bugs are visual and silent, with no stack trace to guide you. Keep shader source readable (named constants, commented units) and enable Three.js's shader error checking during development so a compile failure surfaces in the console instead of a blank canvas.</p><p>A <code>ShaderMaterial</code> or <code>RawShaderMaterial</code> gives full control; <code>onBeforeCompile</code> lets you patch an existing built-in material (keeping its lighting model) rather than reimplementing PBR lighting from scratch just to add one custom effect.</p><aside><b>Point sprites</b> <code>gl_PointCoord</code> runs from (0,0) to (1,1) across each rendered point square — use it to draw circular, soft-edged, or textured particles instead of hard squares.</aside></div><pre><code>// vertex shader
 uniform float uTime;
 void main(){
   vec3 p=position;
@@ -71,17 +116,72 @@ void main(){
   gl_PointSize=3.0*(2.0/-mv.z);
   gl_Position=projectionMatrix*mv;
 }
+// fragment shader — soft circular sprite
+void main(){
+  vec2 c = gl_PointCoord - 0.5;
+  float d = length(c);
+  if (d &gt; 0.5) discard;
+  float alpha = smoothstep(0.5, 0.1, d);
+  gl_FragColor = vec4(vec3(0.4,0.8,1.0), alpha);
+}
 // each frame
-material.uniforms.uTime.value=elapsed;</code></pre></div><footer><b>Exercise</b><span>Add a phase attribute so neighbouring points pulse differently.</span></footer></article>
-<article id="c9"><header><span>CHAPTER 09</span><h2>Audio-reactive graphics</h2><p>Translate sound energy into controlled visual behaviour.</p></header><div class="chapter-grid"><div><h3>Build an audio graph</h3><p>An <code>AudioContext</code> owns connected nodes. <code>AnalyserNode</code> exposes time and frequency samples without changing the sound. Autoplay policy means audio begins after a user gesture.</p><p>Compute bass, mid and high bands; normalise and smooth them; map each to a meaningful parameter. Keep a silent fallback.</p><aside><b>Privacy</b> Object URLs can play selected local files entirely inside the browser session.</aside></div><pre><code>const context=new AudioContext();
+material.uniforms.uTime.value=elapsed;</code></pre></div><footer><b>Exercise</b><span>Add a per-vertex phase attribute so neighbouring points pulse out of sync, then convert the hard-edged point sprite into the soft circular one above.</span></footer></article>
+
+<article id="c9"><header><span>CHAPTER 09</span><h2>Audio-reactive graphics</h2><p>Translate sound energy into controlled, legible visual behaviour.</p></header><div class="chapter-grid"><div><h3>Build an audio graph</h3><p>An <code>AudioContext</code> owns a graph of connected nodes. <code>AnalyserNode</code> exposes time-domain and frequency-domain samples without altering the audible signal, so it can sit anywhere in the chain as a tap. Browser autoplay policy means the context must be created or resumed after a user gesture (a click or key press), not on page load.</p><p>Compute bass, mid and high energy bands from the frequency array; normalise each against a running maximum and smooth with exponential decay so visuals read as musical rather than jittery. Map each band to a meaningful, bounded parameter (scale, hue, particle speed) rather than an unbounded one that can blow up the scene on a loud transient.</p><p>Always keep a silent, deterministic fallback state — a study that only looks correct with audio playing is not verifiable in an automated screenshot pipeline.</p><aside><b>Privacy</b> Object URLs let a user's local audio file play and analyse entirely inside the browser session, with nothing uploaded — worth stating explicitly in any user-facing copy.</aside></div><pre><code>const context=new AudioContext();
 const source=context.createMediaElementSource(audio);
 const analyser=context.createAnalyser();
 analyser.fftSize=2048;
 source.connect(analyser).connect(context.destination);
 const bins=new Uint8Array(analyser.frequencyBinCount);
 analyser.getByteFrequencyData(bins);
-const bass=average(bins.slice(0,24))/255;</code></pre></div><footer><b>Checkpoint</b><span>Add exponential smoothing and compare with the raw signal.</span></footer></article>
-<article id="c10"><header><span>CHAPTER 10</span><h2>Production, testing and release</h2><p>Treat lifecycle and performance as part of the artwork.</p></header><div class="chapter-grid"><div><h3>Finish the system</h3><p>Resize from display size, cap pixel ratio, lazy-load heavy studies and reduce particle counts on constrained devices. Dispose geometries, materials, textures, controls and post-processing when switching.</p><p>Test creation, resize, update, render and disposal. Run a production build, inspect browser errors, verify keyboard/mobile layouts, and compare every title, thumbnail and animation.</p><aside><b>Release gate</b> A beautiful frame is unfinished if it leaks memory, misstates its model or fails on mobile.</aside></div><pre><code>function disposeObject(root){
+const bass=average(bins.slice(0,24))/255;
+
+// exponential smoothing to avoid jitter
+let smoothBass = 0;
+function updateBass(raw){
+  smoothBass += (raw - smoothBass) * 0.15;
+  return smoothBass;
+}</code></pre></div><footer><b>Checkpoint</b><span>Add exponential smoothing and compare it side-by-side with the raw signal on the same visual parameter.</span></footer></article>
+
+<article id="c10"><header><span>CHAPTER 10</span><h2>Post-processing pipelines</h2><p>Treat the final image as a sequence of explicit, costed passes rather than a single render call.</p></header><div class="chapter-grid"><div><h3>Composing an EffectComposer chain</h3><p>An <code>EffectComposer</code> renders the scene to an off-screen target and then runs a chain of full-screen passes over it: bloom for glowing emissive geometry, a film grain or vignette for atmosphere, FXAA or SMAA for anti-aliasing when MSAA is unavailable with certain render targets, and a final output pass that applies colour-space and tone-mapping conversion.</p><p>Every pass is a full-screen fragment-shader cost proportional to canvas resolution, so treat the chain as a budget: order passes so cheap discards (like a bloom's brightness threshold) happen early, and skip a pass entirely on constrained devices rather than running it at reduced strength.</p><p>Render targets need explicit resize handling, matching the canvas's device-pixel-ratio-aware resolution, or the composited image will look soft or misaligned after a window resize.</p><aside><b>Bloom realism</b> Real bloom comes from the render target being in a floating-point, HDR colour buffer before tone mapping — bloom applied after tone mapping to an already-clamped LDR image looks synthetic and flat.</aside></div><pre><code>import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(
+  new THREE.Vector2(innerWidth, innerHeight), 0.9, 0.4, 0.15);
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+function resize(){
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  renderer.setSize(w, h, false);
+  composer.setSize(w, h);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+// render via composer.render() instead of renderer.render(scene, camera)</code></pre></div><footer><b>Exercise</b><span>Add bloom to an emissive-material mesh, then measure frame time with and without the pass using <code>renderer.info</code> and the browser's performance panel.</span></footer></article>
+
+<article id="c11"><header><span>CHAPTER 11</span><h2>WebGPU and the Three Shading Language</h2><p>Understand the emerging alternative renderer path and when it is production-ready.</p></header><div class="chapter-grid"><div><h3>A deliberate renderer choice</h3><p>Three.js provides an evolving <code>WebGPURenderer</code> alongside the mature <code>WebGLRenderer</code>. WebGPU exposes compute shaders directly (not just render passes), lower CPU overhead per draw call, and a more explicit resource-binding model — genuinely useful for large-scale GPU particle simulation and compute-heavy visual studies.</p><p>Materials and effects under the WebGPU path are increasingly authored in <b>TSL</b> (Three Shading Language), a JavaScript-based node system that compiles to either WGSL (WebGPU) or GLSL (WebGL) from one source graph — one material definition, two backends, rather than hand-maintaining parallel shader files.</p><p>Because this surface changes faster than the stable core scene API, feature-detect support, retain a working WebGL fallback for unsupported browsers, and pin examples to a specific Three.js release rather than following "latest" documentation blindly.</p><aside><b>When to reach for it</b> Choose WebGPU/TSL for compute-bound studies (large N-body or fluid-like particle systems) where the WebGL path is CPU-bound on draw calls; stay on WebGL for everything else until support is universal.</aside></div><pre><code>import WebGPU from 'three/addons/capabilities/WebGPU.js';
+import { WebGPURenderer } from 'three/webgpu';
+import { color, mix, uniform, vec3 } from 'three/tsl';
+
+if (WebGPU.isAvailable()) {
+  const renderer = new WebGPURenderer({ antialias: true });
+  await renderer.init();
+
+  // TSL node material — compiles to WGSL or GLSL as needed
+  const uTime = uniform(0);
+  material.colorNode = mix(
+    color(0x143a5c), color(0x6fd8ff),
+    uTime.sin().mul(0.5).add(0.5)
+  );
+} else {
+  // fall back to the existing WebGLRenderer path
+}</code></pre></div><footer><b>Checkpoint</b><span>Feature-detect WebGPU availability in your own project and confirm the WebGL fallback still renders identically for an unsupported browser or device.</span></footer></article>
+
+<article id="c12"><header><span>CHAPTER 12</span><h2>Production, testing and release</h2><p>Treat lifecycle and performance as part of the artwork, not an afterthought.</p></header><div class="chapter-grid"><div><h3>Finish the system</h3><p>Resize from the canvas's actual display size (not <code>window.innerWidth</code>, which is wrong inside a constrained container), cap device pixel ratio to control fragment-shader cost on high-DPI screens, lazy-load heavy studies, and reduce particle counts or post-processing on constrained devices detected via a rough capability check.</p><p>Dispose geometries, materials, textures, controls, composers and audio contexts when switching between studies — the disposal walk below is the minimum; anything holding a GPU or OS resource needs an explicit release, because JavaScript garbage collection does not know about the GPU.</p><p>Test creation, resize, update, render and disposal as separate concerns. Run a production build, inspect the browser console for warnings (not just errors), verify keyboard and mobile layouts, and compare every title, thumbnail and animation against the equation or dataset it claims to represent.</p><aside><b>Release gate</b> A beautiful frame is unfinished if it leaks memory across study switches, misstates its underlying model, or fails on a mid-range mobile GPU — all three are release blockers, not polish items.</aside></div><pre><code>function disposeObject(root){
   root.traverse(object=&gt;{
     object.geometry?.dispose();
     const list=Array.isArray(object.material)
@@ -92,9 +192,14 @@ const bass=average(bins.slice(0,24))/255;</code></pre></div><footer><b>Checkpoin
     });
   });
 }
-// npm test &amp;&amp; npm run build</code></pre></div><footer><b>Exercise</b><span>Switch studies fifty times while watching memory and renderer statistics.</span></footer></article>
-<section class="field-notes"><p class="kicker">ESSENTIAL FIELD NOTES</p><h2>Topics that connect the chapters</h2><div><article><h3>Assets and scene graphs</h3><p>Load textures with <code>TextureLoader</code> and glTF scenes with <code>GLTFLoader</code>. Treat loaded models as object trees: transforms on a parent group affect every descendant. Resolve URLs through the development server, provide visible loading and error states, and dispose textures when the scene is retired.</p></article><article><h3>PBR, shadows and post-processing</h3><p><code>MeshStandardMaterial</code> responds to physically based light parameters and environment maps. Enable shadows only for lights and objects that need them. Build bloom, tone mapping and output conversion as an explicit <code>EffectComposer</code> pass chain; every pass costs render time.</p></article><article><h3>Resize and diagnostics</h3><p>Measure the canvas display rectangle, cap device pixel ratio, update the camera aspect, and resize both renderer and composer. Keep shader checks enabled in development. Inspect the console, network panel, renderer statistics and GPU frame time before changing visual code.</p></article><article><h3>WebGPU and TSL</h3><p>Three.js also provides an evolving WebGPU renderer and its node-based Three Shading Language. Treat this as a deliberate renderer choice, feature-detect it, retain a WebGL path where required, and follow the version-matched official examples because this surface changes faster than the core scene API.</p></article></div></section>
-<section id="project" class="project"><p class="kicker">CAPSTONE</p><h2>Build an equation-driven orbit study</h2><p>Choose a documented system of differential equations. State parameters and initial conditions. Integrate with fixed-step RK4, store the trajectory in <code>BufferGeometry</code>, add a progress attribute, and move a luminous head along it with a shader uniform. Add OrbitControls, reduced motion, deterministic preview, metadata and a numerical limitation.</p><ol><li>Research and record the equation.</li><li>Test the integrator independently.</li><li>Normalise only for display.</li><li>Render points and a faint line.</li><li>Expose visual controls.</li><li>Dispose, resize and validate.</li></ol><pre><code>function rk4Step(state, time, h, derivative) {
+composer?.dispose();
+controls?.dispose();
+audioContext?.close();
+// npm test && npm run build</code></pre></div><footer><b>Exercise</b><span>Switch between studies fifty times while watching <code>renderer.info.memory</code> and confirm geometry/texture counts return to baseline after each switch.</span></footer></article>
+
+<section class="field-notes"><p class="kicker">ESSENTIAL FIELD NOTES</p><h2>Topics that connect the chapters</h2><div><article><h3>Assets and scene graphs</h3><p>Load textures with <code>TextureLoader</code> and glTF scenes with <code>GLTFLoader</code>. Treat loaded models as object trees: transforms on a parent group affect every descendant. Resolve URLs through the development server, provide visible loading and error states, and dispose textures when the scene is retired.</p></article><article><h3>PBR, shadows and post-processing</h3><p><code>MeshStandardMaterial</code> responds to physically based light parameters and environment maps. Enable shadows only for lights and objects that need them — every shadow-casting light adds a full extra depth-render pass. Build bloom, tone mapping and output conversion as an explicit <code>EffectComposer</code> pass chain (see Chapter 10); every pass costs render time.</p></article><article><h3>Resize and diagnostics</h3><p>Measure the canvas's display rectangle, cap device pixel ratio, update the camera aspect, and resize both renderer and composer together. Keep shader checks enabled in development. Inspect the console, network panel, renderer statistics and GPU frame time before changing visual code — profile before you optimise.</p></article><article><h3>WebGPU and TSL</h3><p>Three.js also provides an evolving WebGPU renderer and its node-based Three Shading Language (Chapter 11). Treat this as a deliberate renderer choice, feature-detect it, retain a WebGL path where required, and follow the version-matched official examples because this surface changes faster than the core scene API.</p></article></div></section>
+
+<section id="project" class="project"><p class="kicker">CAPSTONE</p><h2>Build an equation-driven orbit study</h2><p>Choose a documented system of differential equations (a two-body orbit, a Lorenz attractor, a restricted three-body problem). State parameters and initial conditions explicitly. Integrate with fixed-step RK4, store the trajectory in <code>BufferGeometry</code>, add a progress attribute, and move a luminous head along it with a shader uniform. Add OrbitControls, reduced-motion support, a deterministic preview render, metadata describing the model, and a stated numerical limitation.</p><ol><li>Research and record the governing equation and its physical assumptions.</li><li>Test the integrator independently of any rendering code — verify against a known analytic solution first.</li><li>Normalise only for display; keep the underlying state in physical units.</li><li>Render points and a faint trailing line for the trajectory history.</li><li>Expose visual controls (speed, trail length, colour by phase or velocity).</li><li>Dispose, resize and validate — run the fifty-switch memory test from Chapter 12.</li></ol><pre><code>function rk4Step(state, time, h, derivative) {
   const add = (a,b,f) =&gt; a.map((v,i) =&gt; v+b[i]*f);
   const k1 = derivative(state,time);
   const k2 = derivative(add(state,k1,h/2),time+h/2);
@@ -103,5 +208,6 @@ const bass=average(bins.slice(0,24))/255;</code></pre></div><footer><b>Checkpoin
   return state.map((v,i) =&gt;
     v+h*(k1[i]+2*k2[i]+2*k3[i]+k4[i])/6);
 }</code></pre></section>
-<section id="references" class="references"><p class="kicker">PRIMARY READING</p><h2>Official references</h2><div><a href="https://threejs.org/manual/en/fundamentals.html">Three.js Fundamentals ↗</a><a href="https://threejs.org/manual/en/installation.html">Installation and modules ↗</a><a href="https://threejs.org/docs/#api/en/core/BufferGeometry">BufferGeometry ↗</a><a href="https://threejs.org/docs/#api/en/materials/ShaderMaterial">ShaderMaterial ↗</a><a href="https://threejs.org/docs/#examples/en/controls/OrbitControls">OrbitControls ↗</a><a href="https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode">Web Audio AnalyserNode ↗</a></div></section>
+
+<section id="references" class="references"><p class="kicker">PRIMARY READING</p><h2>Official references</h2><div><a href="https://threejs.org/manual/en/fundamentals.html">Three.js Fundamentals ↗</a><a href="https://threejs.org/manual/en/installation.html">Installation and modules ↗</a><a href="https://threejs.org/docs/#api/en/core/BufferGeometry">BufferGeometry ↗</a><a href="https://threejs.org/docs/#api/en/materials/ShaderMaterial">ShaderMaterial ↗</a><a href="https://threejs.org/docs/#examples/en/controls/OrbitControls">OrbitControls ↗</a><a href="https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode">Web Audio AnalyserNode ↗</a><a href="https://threejs.org/docs/#manual/en/introduction/How-to-use-post-processing">Post-processing manual ↗</a><a href="https://threejs.org/docs/#manual/en/introduction/How-to-use-WebGPU">WebGPU renderer ↗</a></div></section>
 </main><footer><b>AETHER</b><span>Computational Visual Laboratory</span><small>Created and curated by Biswajit Jana · © 2026</small><a href="../">Return to the laboratory</a></footer><script>const p=document.querySelector('#progress');addEventListener('scroll',()=>{const h=document.documentElement;p.style.width=`${h.scrollTop/(h.scrollHeight-h.clientHeight)*100}%`},{passive:true});</script></body></html>
