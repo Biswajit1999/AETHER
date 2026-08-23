@@ -9,10 +9,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test tests/catalogue.test.mjs tests/two-galaxy-model.test.mjs tests/equation-studies.test.mjs tests/study-sampling.test.mjs && node scripts/validate-study-contracts.mjs",
+    "test": "node --test tests/catalogue.test.mjs tests/two-galaxy-model.test.mjs tests/equation-studies.test.mjs tests/study-sampling.test.mjs tests/quality.test.mjs tests/numerical-diagnostics.test.mjs && node scripts/validate-study-contracts.mjs",
     "manifest": "node scripts/build-manifest.mjs"
   },
   "dependencies": {
+    "motion": "13.1.0",
     "three": "0.185.0"
   },
   "devDependencies": {

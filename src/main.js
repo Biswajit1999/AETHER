@@ -1,8 +1,10 @@
 import * as THREE from 'three';
+import { animate } from 'motion/mini';
 import { createAudioAnalyser, createProceduralAudioAnalyser } from './runtime/audio.js';
 import { makePRNG } from './runtime/seed.js';
 import { prefersReducedMotion } from './runtime/reduced-motion.js';
 import { assertImplementsContract } from './runtime/animation-contract.js';
+import { createPerformanceGovernor } from './runtime/quality.js';
 import { equationStudies } from './animations/shared/equation-catalog.js';
 import { studies } from './animations/shared/study-catalog.js';
 import { rk4Step } from './math/rk4.js';
@@ -36,6 +38,7 @@ const colourInput = document.querySelector('#visual-colour');
 const gallerySearch = document.querySelector('#gallery-search');
 const studyTags = document.querySelector('#study-tags');
 const studyState = document.querySelector('#study-state');
+const modelTier = document.querySelector('#model-tier');
 const researchPanel = document.querySelector('#research-panel');
 const volumeInput = document.querySelector('#audio-volume');
 const meterBars = [...document.querySelectorAll('.audio-meter i')];
@@ -43,6 +46,11 @@ const runtimeConsole = document.querySelector('#runtime-console');
 const sourceConsole = document.querySelector('#source-console');
 const sourceToggle = document.querySelector('#source-console-toggle');
 const systemMessage = document.querySelector('#system-message');
+const qualityInput = document.querySelector('#render-quality');
+const qualityStatus = document.querySelector('#quality-status');
+const hudFps = document.querySelector('#hud-fps');
+const hudFrame = document.querySelector('#hud-frame');
+const hudLoad = document.querySelector('#hud-load');
 const navToggle = document.querySelector('#nav-toggle');
 const primaryNavigation = document.querySelector('#primary-navigation');
 const localSourceAccess = ['localhost', '127.0.0.1'].includes(window.location.hostname);
@@ -60,6 +68,12 @@ const bundledPlaylist = [
 ];
 
 const reducedMotion = prefersReducedMotion();
+const qualityGovernor = createPerformanceGovernor({
+  mode: qualityInput?.value || 'auto',
+  coarsePointer: window.matchMedia('(pointer:coarse)').matches,
+  devicePixelRatio: window.devicePixelRatio || 1
+});
+let qualityState = qualityGovernor.snapshot();
 
 const renderer = new THREE.WebGLRenderer({
   canvas,
@@ -75,7 +89,7 @@ let fallbackYaw = 0;
 let fallbackPitch = 0;
 let fallbackZoom = 1;
 renderer.render = (scene, camera) => {
-  if (!currentAnimation?.resetView && camera?.isCamera) {
+  if (camera?.isCamera && (fallbackYaw !== 0 || fallbackPitch !== 0 || fallbackZoom !== 1)) {
     const position = camera.position.clone();
     const quaternion = camera.quaternion.clone();
     camera.position.multiplyScalar(fallbackZoom);
@@ -91,7 +105,7 @@ renderer.render = (scene, camera) => {
 };
 
 // Deliberately cap DPR so a 3x/4x phone screen does not multiply fragment cost without limit.
-const targetPixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+let targetPixelRatio = qualityState.pixelRatio;
 renderer.setPixelRatio(targetPixelRatio);
 
 // Every animation module is bundled as its own chunk and lazily fetched only
@@ -111,6 +125,7 @@ let activeTrackIndex = -1;
 let audioPlaying = false;
 let mobileLayout = window.matchMedia('(max-width:720px)').matches;
 let sharedTopologySampler = null;
+let activeStudyMotion = null;
 
 function reportSystemMessage(message, kind = 'notice') {
   if (!systemMessage) return;
@@ -310,11 +325,25 @@ function buildRuntime(seed) {
     canvas,
     seed,
     random: makePRNG(seed),
-    reducedMotion
+    reducedMotion,
+    quality: qualityState.profile
   };
 }
 
-async function loadAnimation(index) {
+function syncStudyLocation(entry, replace = false) {
+  const url = new URL(window.location.href);
+  url.searchParams.set('study', entry.slug);
+  window.history[replace ? 'replaceState' : 'pushState']({ study: entry.slug }, '', url);
+}
+
+function animateStudyInformation() {
+  if (reducedMotion) return;
+  activeStudyMotion?.cancel?.();
+  const targets = document.querySelectorAll('.study-info, #research-panel:not([hidden])');
+  activeStudyMotion = animate(targets, { opacity: [0.35, 1], transform: ['translateY(10px)', 'translateY(0px)'] }, { duration: 0.38, ease: [0.22, 1, 0.36, 1] });
+}
+
+async function loadAnimation(index, { updateLocation = true, replaceLocation = false } = {}) {
   const entry = manifest.animations[index];
   if (!entry) return;
 
@@ -348,9 +377,15 @@ async function loadAnimation(index) {
   galleryGrid?.querySelector(`[data-index="${index}"]`)?.setAttribute('aria-current', 'true');
   filmstrip?.querySelectorAll('.filmstrip-card').forEach((card) => card.classList.toggle('active', Number(card.dataset.index) === index));
   if (titleEl) titleEl.textContent = entry.title;
+  canvas.setAttribute('aria-label', `${entry.title}. Interactive AETHER computational study. Drag to rotate, scroll to zoom, or use WASD and the camera controls.`);
   if (studyClass) studyClass.textContent = String(entry.classification ?? 'COMPUTATIONAL STUDY').replaceAll('_', ' ');
   if (studyDescription) studyDescription.textContent = entry.description ?? `An interactive AETHER study exploring ${entry.tags?.slice(0, 3).join(', ') || 'computational motion'}.`;
   if (studyIndex) studyIndex.textContent = `${String(index + 1).padStart(2, '0')} / ${manifest.animations.length}`;
+  if (modelTier) {
+    const tier = entry.classification === 'PHYSICS_MODEL' ? 'VALIDATED MODEL' : entry.classification === 'PHYSICALLY_MODELLED' ? 'MODEL-BASED' : entry.classification === 'SPECULATIVE_ARTISTIC' ? 'SPECULATIVE' : 'MATHEMATICAL';
+    modelTier.textContent = tier;
+    modelTier.dataset.tier = entry.classification || 'MATHEMATICALLY_INSPIRED';
+  }
   updateResearch(entry);
   if (runtimeConsole) runtimeConsole.textContent = `[A${String(entry.order).padStart(3, '0')}] ${entry.title}\nmodule loaded\nseed ${entry.seed}\nrenderer WebGL · audio reactive`;
   if (sourceConsole) { sourceConsole.hidden = true; sourceConsole.textContent = ''; }
@@ -370,20 +405,25 @@ async function loadAnimation(index) {
     if (audioPlaying) playLocalTrack(trackIndex);
     else selectPlaylistTrack(trackIndex);
   }
+  if (updateLocation) syncStudyLocation(entry, replaceLocation);
+  animateStudyInformation();
 }
 
-function selectPlaylistTrack(index) {
+function selectPlaylistTrack(index, attachMedia = false) {
   if (!localPlaylist.length) return null;
   activeTrackIndex = (index + localPlaylist.length) % localPlaylist.length;
   const track = localPlaylist[activeTrackIndex];
-  audioElement.src = track.url;
+  if (attachMedia && audioElement.src !== new URL(track.url, window.location.href).href) {
+    audioElement.src = track.url;
+    audioElement.load();
+  }
   const label = track.file ? `${track.file.name} · local only` : `${track.title} — ${track.artist}`;
   document.querySelector('#audio-name').textContent = `${label} · ${activeTrackIndex + 1}/${localPlaylist.length}`;
   return track;
 }
 
 async function playLocalTrack(index) {
-  if (!selectPlaylistTrack(index)) return;
+  if (!selectPlaylistTrack(index, true)) return;
   if (analyser?.kind !== 'media') {
     await analyser?.dispose?.();
     analyser = await createAudioAnalyser(audioElement);
@@ -406,6 +446,7 @@ function renderCatalogue() {
   galleryGrid.replaceChildren();
   filmstrip.replaceChildren();
   catalogueCount.textContent = manifest.animations.length;
+  const entranceCards = [];
   manifest.animations.forEach((entry, index) => {
     const card = document.createElement('button');
     card.type = 'button'; card.className = 'gallery-card'; card.dataset.index = index;
@@ -419,6 +460,7 @@ function renderCatalogue() {
     card.append(preview, number, heading, tags);
     card.addEventListener('click', () => { loadAnimation(index); closePanels(); });
     galleryGrid.appendChild(card);
+    if (index < 12) entranceCards.push(card);
     const thumb = document.createElement('button');
     thumb.type = 'button'; thumb.className = 'filmstrip-card'; thumb.dataset.index = index; thumb.title = entry.title;
     const thumbnail = document.createElement('canvas'); thumbnail.width = 180; thumbnail.height = 94; thumbnail.dataset.previewIndex = index;
@@ -426,6 +468,10 @@ function renderCatalogue() {
     thumb.addEventListener('click', () => loadAnimation(index));
     filmstrip.appendChild(thumb);
   });
+  if (!reducedMotion && entranceCards.length) {
+    entranceCards.forEach((card) => { card.style.opacity = '0'; card.style.transform = 'translateY(8px) scale(.985)'; });
+    entranceCards.forEach((card, index) => animate(card, { opacity: 1, transform: 'translateY(0px) scale(1)' }, { duration: .32, delay: index * .025, ease: [0.22, 1, 0.36, 1] }));
+  }
   import('./animations/shared/study-engine.js').then((module) => {
     sharedTopologySampler = module.sampleTopology;
     document.querySelectorAll('canvas[data-preview-index]').forEach((preview) => {
@@ -494,6 +540,33 @@ function resize() {
 }
 window.addEventListener('resize', resize);
 
+function applyQualityState(nextState, announce = false) {
+  qualityState = nextState;
+  const nextPixelRatio = nextState.pixelRatio;
+  if (Math.abs(nextPixelRatio - targetPixelRatio) > 0.001) {
+    targetPixelRatio = nextPixelRatio;
+    renderer.setPixelRatio(targetPixelRatio);
+    resize();
+  }
+  if (qualityStatus) qualityStatus.textContent = `${nextState.profile.label} · ${targetPixelRatio.toFixed(2)}× DPR`;
+  if (announce) reportSystemMessage(`Render quality set to ${nextState.mode === 'auto' ? 'Auto' : nextState.profile.label}.`, 'notice');
+}
+
+function adjustFallbackCamera(action) {
+  const orbitStep = 0.14;
+  if (action === 'left') fallbackYaw -= orbitStep;
+  if (action === 'right') fallbackYaw += orbitStep;
+  if (action === 'up') fallbackPitch = Math.max(-1.2, fallbackPitch - orbitStep);
+  if (action === 'down') fallbackPitch = Math.min(1.2, fallbackPitch + orbitStep);
+  if (action === 'zoom-in') fallbackZoom = Math.max(.45, fallbackZoom - .12);
+  if (action === 'zoom-out') fallbackZoom = Math.min(2.2, fallbackZoom + .12);
+  if (action === 'reset') {
+    fallbackYaw = 0; fallbackPitch = 0; fallbackZoom = 1;
+    currentAnimation?.resetView?.();
+  }
+  canvas.focus({ preventScroll: true });
+}
+
 // The deterministic export path for the currently active animation: same
 // seed + source + time + audio -> same frame. Playwright invokes this
 // directly from scripts/render-frames.mjs, one animation per export run.
@@ -507,18 +580,43 @@ window.renderAt = renderAt;
 function frame(now) {
   const delta = Math.min((now - previousFrameTime) / 1000, 0.1);
   previousFrameTime = now;
+  const measuredQuality = qualityGovernor.sample(delta * 1000);
+  if (measuredQuality.changed) applyQualityState(measuredQuality);
+  else qualityState = measuredQuality;
   const audio = analyser ? analyser.sample() : { bass: 0, mid: 0, high: 0, onset: 0, rms: 0 };
   if (runtimeConsole && now - lastConsoleUpdate > 500) {
     const entry = manifest.animations[currentIndex];
-    runtimeConsole.textContent = `[A${String(entry?.order || 0).padStart(3, '0')}] ${entry?.title || 'AETHER'}\nframe ${(now / 1000).toFixed(2)} s\nviewport ${Math.round(width)} × ${Math.round(height)} px\naudio rms ${(audio.rms || 0).toFixed(3)} · bass ${(audio.bass || 0).toFixed(3)}\nrender active · deterministic seed`;
+    const renderInfo = renderer.info.render;
+    runtimeConsole.textContent = `[A${String(entry?.order || 0).padStart(3, '0')}] ${entry?.title || 'AETHER'}\nframe ${(now / 1000).toFixed(2)} s · ${qualityState.fps.toFixed(0)} fps\np95 ${qualityState.p95Ms.toFixed(1)} ms · ${qualityState.profile.label} ${targetPixelRatio.toFixed(2)}× DPR\nviewport ${Math.round(width)} × ${Math.round(height)} px\ndraw ${renderInfo.calls} · points ${renderInfo.points.toLocaleString()} · triangles ${renderInfo.triangles.toLocaleString()}\naudio rms ${(audio.rms || 0).toFixed(3)} · bass ${(audio.bass || 0).toFixed(3)}\nrender active · deterministic seed`;
     lastConsoleUpdate = now;
+    if (hudFps) hudFps.textContent = qualityState.fps.toFixed(0);
+    if (hudFrame) hudFrame.textContent = `${qualityState.p95Ms.toFixed(1)} ms`;
+    if (hudLoad) {
+      const load = qualityState.p95Ms > 24 ? 'HIGH' : qualityState.p95Ms > 18 ? 'MED' : 'LOW';
+      hudLoad.textContent = load;
+      hudLoad.dataset.load = load;
+    }
   }
   meterBars.forEach((bar, index) => {
     const energy = audioPlaying ? Math.max(audio.rms || 0, audio.bass || 0, .08) : .035;
     bar.style.setProperty('--meter', `${5 + energy * (12 + (index % 5) * 8)}px`);
   });
   renderAt(now / 1000, audio);
-  requestAnimationFrame(frame);
+}
+
+let renderLoopActive = false;
+function startRenderLoop() {
+  if (renderLoopActive) return;
+  previousFrameTime = performance.now();
+  qualityGovernor.resetMeasurements();
+  renderer.setAnimationLoop(frame);
+  renderLoopActive = true;
+}
+
+function stopRenderLoop() {
+  if (!renderLoopActive) return;
+  renderer.setAnimationLoop(null);
+  renderLoopActive = false;
 }
 
 async function init() {
@@ -541,8 +639,11 @@ async function init() {
 
   resize();
   renderCatalogue();
-  await loadAnimation(0);
-  requestAnimationFrame(frame);
+  const requestedStudy = new URLSearchParams(window.location.search).get('study');
+  const requestedIndex = requestedStudy ? manifest.animations.findIndex((entry) => entry.slug === requestedStudy || entry.id === requestedStudy || `a${entry.order}` === requestedStudy.toLowerCase()) : -1;
+  await loadAnimation(requestedIndex >= 0 ? requestedIndex : 0, { updateLocation: true, replaceLocation: true });
+  applyQualityState(qualityState);
+  startRenderLoop();
 }
 
 prevButton?.addEventListener('click', () => {
@@ -559,12 +660,25 @@ nextButton?.addEventListener('click', () => {
 
 galleryToggle?.addEventListener('click', () => galleryPanel.classList.contains('open') ? closePanels() : openPanel());
 window.addEventListener('keydown', (event) => {
+  if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+    event.preventDefault();
+    openCommandPalette();
+    return;
+  }
   if (event.key === 'Escape') closePanels();
   if (event.target.matches('textarea, input')) return;
   if (event.key.toLowerCase() === 'g') openPanel();
   if (event.key === 'ArrowRight') nextButton?.click();
   if (event.key === 'ArrowLeft') prevButton?.click();
+  if (event.key.toLowerCase() === 'w') adjustFallbackCamera('up');
+  if (event.key.toLowerCase() === 'a') adjustFallbackCamera('left');
+  if (event.key.toLowerCase() === 's') adjustFallbackCamera('down');
+  if (event.key.toLowerCase() === 'd') adjustFallbackCamera('right');
+  if (event.key === '+' || event.key === '=') adjustFallbackCamera('zoom-in');
+  if (event.key === '-' || event.key === '_') adjustFallbackCamera('zoom-out');
 });
+
+document.querySelectorAll('[data-camera]').forEach((button) => button.addEventListener('click', () => adjustFallbackCamera(button.dataset.camera)));
 
 startButton.addEventListener('click', async () => {
   if (audioPlaying) {
@@ -573,6 +687,10 @@ startButton.addEventListener('click', async () => {
     audioPlaying = false;
     startButton.textContent = '▶';
     startButton.setAttribute('aria-label', 'Play');
+    return;
+  }
+  if (!audioElement.src && localPlaylist.length) {
+    await playLocalTrack(activeTrackIndex >= 0 ? activeTrackIndex : 0);
     return;
   }
   if (!analyser) {
@@ -606,9 +724,9 @@ document.querySelectorAll('#category-filters button').forEach((button) => button
   applyCatalogueFilter();
 }));
 gallerySearch?.addEventListener('input', applyCatalogueFilter);
-document.querySelector('#focus-search')?.addEventListener('click', () => { openPanel(); gallerySearch?.focus(); });
 
 [speedInput, scaleInput, glowInput, colourInput].forEach((input) => input?.addEventListener('input', applyVisualControls));
+qualityInput?.addEventListener('change', () => applyQualityState(qualityGovernor.setMode(qualityInput.value), true));
 document.querySelector('#reset-visuals')?.addEventListener('click', () => {
   speedInput.value = 0.08; scaleInput.value = 1; glowInput.value = 1; colourInput.value = '#45dfff';
   fallbackYaw = 0; fallbackPitch = 0; fallbackZoom = 1;
@@ -634,6 +752,71 @@ document.querySelector('#about-close')?.addEventListener('click', () => aboutDia
 const laboratoryDialog = document.querySelector('#laboratory-dialog');
 document.querySelector('#laboratory-toggle')?.addEventListener('click', () => laboratoryDialog.showModal());
 document.querySelector('#laboratory-close')?.addEventListener('click', () => laboratoryDialog.close());
+const commandDialog = document.querySelector('#command-dialog');
+const commandInput = document.querySelector('#command-input');
+const commandResults = document.querySelector('#command-results');
+let commandSelection = 0;
+
+function commandMatches() {
+  const query = commandInput?.value.trim().toLowerCase() || '';
+  const queryTokens = query.split(/\s+/).filter(Boolean);
+  return manifest.animations
+    .map((entry, index) => ({ entry, index }))
+    .filter(({ entry }) => {
+      if (!queryTokens.length) return true;
+      const searchable = `${entry.title} ${entry.description} ${(entry.tags || []).join(' ')} ${entry.equation || ''}`.toLowerCase();
+      return queryTokens.every(token => searchable.includes(token));
+    })
+    .slice(0, 10);
+}
+
+function renderCommandResults() {
+  if (!commandResults) return;
+  const matches = commandMatches();
+  commandSelection = Math.max(0, Math.min(commandSelection, matches.length - 1));
+  commandResults.replaceChildren(...matches.map(({ entry, index }, resultIndex) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'command-result';
+    button.dataset.index = index;
+    button.setAttribute('role', 'option');
+    button.setAttribute('aria-selected', String(resultIndex === commandSelection));
+    const number = document.createElement('span');
+    number.textContent = `A${String(entry.order).padStart(3, '0')}`;
+    const title = document.createElement('strong');
+    title.textContent = entry.title;
+    const tags = document.createElement('small');
+    tags.textContent = (entry.tags || []).slice(0, 3).join(' · ');
+    button.append(number, title, tags);
+    button.addEventListener('click', () => { commandDialog.close(); loadAnimation(index); });
+    return button;
+  }));
+  if (!matches.length) {
+    const empty = document.createElement('p'); empty.className = 'command-empty'; empty.textContent = 'No matching study. Try a title, field or equation.'; commandResults.append(empty);
+  }
+}
+
+function openCommandPalette() {
+  if (!commandDialog?.open) commandDialog.showModal();
+  commandSelection = 0;
+  renderCommandResults();
+  commandInput?.focus();
+  if (!reducedMotion) animate(commandDialog, { opacity: [0, 1], transform: ['translateY(-12px) scale(.985)', 'translateY(0px) scale(1)'] }, { duration: .25, ease: [0.22, 1, 0.36, 1] });
+}
+
+document.querySelector('#focus-search')?.addEventListener('click', openCommandPalette);
+document.querySelector('#command-close')?.addEventListener('click', () => commandDialog.close());
+commandInput?.addEventListener('input', () => { commandSelection = 0; renderCommandResults(); });
+commandInput?.addEventListener('keydown', (event) => {
+  const results = [...commandResults.querySelectorAll('.command-result')];
+  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+    event.preventDefault();
+    commandSelection = results.length ? (commandSelection + (event.key === 'ArrowDown' ? 1 : -1) + results.length) % results.length : 0;
+    results.forEach((result, index) => result.setAttribute('aria-selected', String(index === commandSelection)));
+    results[commandSelection]?.scrollIntoView({ block: 'nearest' });
+  }
+  if (event.key === 'Enter' && results[commandSelection]) { event.preventDefault(); results[commandSelection].click(); }
+});
 navToggle?.addEventListener('click', () => {
   const open = primaryNavigation.classList.toggle('open');
   navToggle.setAttribute('aria-expanded', String(open));
@@ -683,6 +866,17 @@ function updateObservatoryClock() {
 }
 updateObservatoryClock();
 setInterval(updateObservatoryClock, 1000);
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopRenderLoop();
+  else if (currentAnimation) startRenderLoop();
+});
+
+window.addEventListener('popstate', () => {
+  const slug = new URLSearchParams(window.location.search).get('study');
+  const index = manifest.animations.findIndex((entry) => entry.slug === slug);
+  if (index >= 0 && index !== currentIndex) loadAnimation(index, { updateLocation: false });
+});
 
 let fallbackDragging = false;
 let fallbackPointerX = 0;

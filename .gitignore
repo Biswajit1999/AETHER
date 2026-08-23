@@ -1,5 +1,6 @@
 node_modules/
 dist/
+output/pdf/rendered/
 .vite/
 staging/*
 !staging/.gitkeep
