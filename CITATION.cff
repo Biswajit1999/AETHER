@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite it using this metadata."
+title: "AETHER — Computational Visual Laboratory"
+abstract: "AETHER is Biswajit Jana’s computational visual laboratory for interactive mathematics, physics, particle systems and real-time audiovisual studies."
+type: software
+authors:
+  - family-names: Jana
+    given-names: Biswajit
+repository-code: "https://github.com/Biswajit1999/AETHER"
+url: "https://biswajit1999.github.io/AETHER/"
+keywords:
+  - "astronomy"
+  - "astrophysics"
+  - "scientific computing"
